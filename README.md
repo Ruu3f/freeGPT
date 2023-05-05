@@ -1,18 +1,21 @@
 # freeGPT
 A Python package that gives access to GPT3 &amp; GPT4 models for free
 ## Examples
-### [ai.useless.com](https://ai.useless.com)
+### [gpt3 (you.com)](https://you.com)
 ```python
-from gpt4free import usesless
+from freeGPT import gpt3
 
-message_id = ""
+chat = []
+
 while True:
-    prompt = input("Question: ")
-    if prompt == "!stop":
+    prompt = input("You: ")
+    if prompt == 'q':
         break
+    response = gpt3.Completion.create(
+        prompt=prompt,
+        chat=chat)
 
-    req = usesless.Completion.create(prompt=prompt, parentMessageId=message_id)
+    print("Bot:", response.text)
 
-    print(f"Answer: {req['text']}")
-    message_id = req["id"]
+    chat.append({"question": prompt, "answer": response.text})
 ```
