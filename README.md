@@ -19,3 +19,9 @@ while True:
 
     chat.append({"question": prompt, "answer": response.text})
 ```
+### [gpt4 (null)](null)
+```python
+from freeGPT import gpt4
+
+# IN PROGRESS
+```
