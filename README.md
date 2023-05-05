@@ -7,8 +7,6 @@ from freeGPT import gpt3
 
 chat = []
 
-send_prompt()
-
 def send_prompt():
     try:
         prompt = input("> ")
