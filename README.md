@@ -8,15 +8,11 @@ from freeGPT import gpt3
 chat = []
 
 while True:
-    prompt = input("You: ")
-    if prompt == 'q':
-        break
+    prompt = input("> ")
     response = gpt3.Completion.create(
         prompt=prompt,
         chat=chat)
-
-    print("Bot:", response.text)
-
+    print("Response:", response.text)
     chat.append({"question": prompt, "answer": response.text})
 ```
 ### [gpt4 (null)](null)
