@@ -1,7 +1,7 @@
 # freeGPT
 A Python package that gives access to GPT3 &amp; GPT4 models for free
 ## Examples
-###`usesless` <a name="example-usesless"></a>
+### [ai.useless.com](https://ai.useless.com)
 ```python
 from gpt4free import usesless
 
