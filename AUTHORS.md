@@ -1,12 +1,10 @@
 Credits
 =======
 
-Original author:
-----------------
+### Original author:
 
 * Reza Shakeri <rzashakeri@gmail.com>
 
-Forked by:
-----------
+### Forked by:
 
 * Ruu3f
