@@ -7,13 +7,19 @@ from freeGPT import gpt3
 
 chat = []
 
+send_prompt()
+
+def send_prompt():
+    try:
+        prompt = input("> ")
+        response = gpt3.Completion.create(prompt=prompt, chat=chat)
+        print("Response:", response.text)
+        chat.append({"question": prompt, "answer": response.text})
+    except Exception as e:
+        print("Error:", str(e))
+
 while True:
-    prompt = input("> ")
-    response = gpt3.Completion.create(
-        prompt=prompt,
-        chat=chat)
-    print("Response:", response.text)
-    chat.append({"question": prompt, "answer": response.text})
+    send_prompt()
 ```
 ### [gpt4 (null)](null)
 ```python
