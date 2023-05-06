@@ -1,5 +1,7 @@
 # freeGPT
 A Python package that gives access to GPT3 &amp; GPT4 models for free
+<br>
+*Get started by doing: `pip install freeGPT`*
 ### Credits
 
 #### Original author:
@@ -9,8 +11,7 @@ A Python package that gives access to GPT3 &amp; GPT4 models for free
 #### Current author:
 
 * Ruu3f
-<br>
-*Get started by doing: `pip install freeGPT`*
+
 ## Examples
 ### [gpt3 (you.com)](https://you.com)
 ```python
