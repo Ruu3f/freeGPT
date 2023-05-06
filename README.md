@@ -2,13 +2,13 @@
 A Python package that gives access to GPT3 &amp; GPT4 models for free
 <br>
 *Get started by doing: `pip install freeGPT`*
-### Credits
+## Credits
 
-#### Original author:
+### Original author:
 
 * Reza Shakeri <rzashakeri@gmail.com>
 
-#### Current author:
+### Current author:
 
 * Ruu3f
 
