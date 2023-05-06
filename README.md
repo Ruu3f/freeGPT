@@ -27,3 +27,13 @@ from freeGPT import gpt4
 
 # IN PROGRESS
 ```
+Credits
+=======
+
+### Original author:
+
+* Reza Shakeri <rzashakeri@gmail.com>
+
+### Forked by:
+
+* Ruu3f
