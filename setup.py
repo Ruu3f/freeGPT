@@ -20,7 +20,7 @@ setup(
         "chatgpt",
         "openai",
         "gpt",
-        "ai"
+        "ai",
     ],
     python_requires=">=3.6",
     classifiers=[
@@ -37,11 +37,12 @@ setup(
     install_requires=[
         "pydantic",
         "fake-useragent",
-        "tls-client --no-cache-dir"
+        "pymailtm",
+        "requests",
     ],
     project_urls={
         "Source": "https://github.com/Ruu3f/freeGPT",
+        "Issues": "https://github.com/Ruu3f/freeGPT/issues",
         "Discussions": "https://github.com/Ruu3f/freeGPT/discussions",
-        "Issues": "https://github.com/Ruu3f/freeGPT/issues"
     },
 )

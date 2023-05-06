@@ -1,10 +1,10 @@
-import re, json
-from typing import Optional, List, Dict, Any
+import os, re, json
+os.system("pip install tls-client --no-cache-dir")
 from uuid import uuid4
-
-from fake_useragent import UserAgent
 from pydantic import BaseModel
 from tls_client import Session
+from fake_useragent import UserAgent
+from typing import Optional, List, Dict, Any
 
 
 class PoeResponse(BaseModel):
@@ -52,7 +52,7 @@ class Completion:
                 'responseFilter': response_filter,
                 'domain': domain,
                 'queryTraceId': str(uuid4()) if query_trace_id is None else query_trace_id,
-                'chat': str(chat),
+                'chat': str(chat),  # {'question':'','answer':' ''}
             },
         )
 
@@ -70,11 +70,13 @@ class Completion:
         third_party_search_results = re.search(
             r'(?<=event: thirdPartySearchResults\ndata:)(.*\n)*?(?=event: )', response.text
         ).group()
+        # slots                   = findall(r"slots\ndata: (.*)\n\nevent", response.text)[0]
 
         text = ''.join(re.findall(r'{\"youChatToken\": \"(.*?)\"}', response.text))
 
         extra = {
             'youChatSerpResults': json.loads(you_chat_serp_results),
+            # 'slots'                   : loads(slots)
         }
 
         response = PoeResponse(text=text.replace('\\n', '\n').replace('\\\\', '\\').replace('\\"', '"'))
