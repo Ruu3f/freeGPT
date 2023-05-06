@@ -1,5 +1,14 @@
 # freeGPT
 A Python package that gives access to GPT3 &amp; GPT4 models for free
+### Credits
+
+#### Original author:
+
+* Reza Shakeri <rzashakeri@gmail.com>
+
+#### Current author:
+
+* Ruu3f
 <br>
 *Get started by doing: `pip install freeGPT`*
 ## Examples
@@ -27,13 +36,3 @@ from freeGPT import gpt4
 
 # IN PROGRESS
 ```
-Credits
-=======
-
-### Original author:
-
-* Reza Shakeri <rzashakeri@gmail.com>
-
-### Forked by:
-
-* Ruu3f
