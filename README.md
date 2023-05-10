@@ -1,7 +1,7 @@
 [![PyPI version](https://badge.fury.io/py/freeGPT.svg)](https://badge.fury.io/py/freeGPT)
 [![Downloads](https://static.pepy.tech/personalized-badge/freeGPT?period=month&units=international_system&left_color=grey&right_color=brightgreen&left_text=Downloads)](https://pepy.tech/project/freeGPT)
 # freeGPT
-A Python package that gives access to GPT3 &amp; GPT4 models for free
+A Python package that gives access to GPT3 &amp; GPT4 models for free ( More models coming at 16 stars! So star this repository :D )
 <br>
 *Get started by doing: `pip install freeGPT`*
 ## Credits
