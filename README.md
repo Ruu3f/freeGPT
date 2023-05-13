@@ -1,7 +1,7 @@
 [![PyPI version](https://badge.fury.io/py/freeGPT.svg)](https://badge.fury.io/py/freeGPT)
 [![Downloads](https://static.pepy.tech/personalized-badge/freeGPT?period=month&units=international_system&left_color=grey&right_color=brightgreen&left_text=Downloads)](https://pepy.tech/project/freeGPT)
 # freeGPT
-A Python package that gives access to GPT3 &amp; GPT4 models for free ( More models coming at 16 stars! So star this repository :D )
+A Python package that gives access to GPT3 &amp; GPT4 models for free.
 <br>
 *Get started by doing: `pip install freeGPT`*
 ## Credits
@@ -48,3 +48,9 @@ def send_prompt():
 while True:
     send_prompt()
 ```
+
+### More easier to understand and better models at 16 stars! So what are you waiting for? Go ahead and star this repositry! (Please)
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=Ruu3f/freeGPT&type=Date)](https://star-history.com/#Ruu3f/freeGPT&Date)
