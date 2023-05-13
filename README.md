@@ -54,4 +54,5 @@ while True:
 - [ ] Make the over-all library easier to understand
 ### Star History
 [![Star History Chart](https://api.star-history.com/svg?repos=Ruu3f/freeGPT&type=Date)](https://github.com/Ruu3f/freeGPT/stargazers)
-#### I will make the library more easier to use and better way to use the models at 16 stars! So what are you waiting for? Go ahead and star this repositry! (Please)
+#### Original by [xtekky](https://github.com/xtekky), currently maintained by Ruu3f.
+#### Completing the TODO-List when this repository hits 16 stars.
