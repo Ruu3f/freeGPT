@@ -66,7 +66,7 @@ while True:
 - [ ] Make the over-all library easier to use
 - [ ] Make the over-all library easier to understand
 
-## Star History
+### Star History
 
 [![Star History Chart](https://api.star-history.com/svg?repos=Ruu3f/freeGPT&type=Date)](https://github.com/Ruu3f/freeGPT/stargazers)
 
