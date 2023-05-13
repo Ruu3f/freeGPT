@@ -62,7 +62,7 @@ while True:
 
 ### TODO-List:
 - [x] Add GPT-4
-- [ ] Add documentation
+- [ ] Make the library well-documented
 - [ ] Make the over-all library easier to use
 - [ ] Make the over-all library easier to understand
 
