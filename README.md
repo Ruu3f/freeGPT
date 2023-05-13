@@ -36,7 +36,8 @@ while True:
 ```
 </details>
 </li>
-  
+</ul>
+<ul>
 <li>
 <details>
   <summary>GPT4</summary>
@@ -63,7 +64,7 @@ while True:
 
 | Models        | Websites                                 |
 | ------------- | -----------------------------------------|
-| GPT-3.5       | [you.com](https://chat.forefront.ai)     |
+| GPT-3         | [you.com](https://chat.forefront.ai)     |
 | GPT-4         | [forefront.ai](https://chat.forefront.ai)|
 
 ### More easier to understand and better models at 16 stars! So what are you waiting for? Go ahead and star this repositry! (Please)
