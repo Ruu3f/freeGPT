@@ -13,10 +13,8 @@ A Python package that gives access to GPT3 &amp; GPT4 models for free.
 
 ## Examples
 
-<ul>
-<li>
 <details>
-  <summary>GPT3</summary>
+<summary>GPT-3</summary>
 ```python
 from freeGPT import gpt3
 
@@ -33,14 +31,9 @@ def send_prompt():
 
 while True:
     send_prompt()
-```
 </details>
-</li>
-</ul>
-<ul>
-<li>
 <details>
-  <summary>GPT4</summary>
+<summary>GPT-4</summary>
 ```python
 from freeGPT import gpt4
 
@@ -59,8 +52,6 @@ while True:
     send_prompt()
 ```
 </details>
-</li>
-</ul>
 
 | Models        | Websites                                 |
 | ------------- | -----------------------------------------|
