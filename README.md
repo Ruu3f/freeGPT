@@ -55,7 +55,7 @@ while True:
 
 | Models        | Websites                                 |
 | ------------- | -----------------------------------------|
-| GPT-3         | [you.com](https://chat.forefront.ai)     |
+| GPT-3         | [you.com](https://you.com)     |
 | GPT-4         | [forefront.ai](https://chat.forefront.ai)|
 
 ## Conclusion
