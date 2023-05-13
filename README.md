@@ -31,6 +31,7 @@ def send_prompt():
 
 while True:
     send_prompt()
+```
 </details>
 <details>
 <summary>GPT-4</summary>
