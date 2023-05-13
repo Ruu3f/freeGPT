@@ -53,4 +53,5 @@ while True:
 
 ## Star History
 
-<a href="https://github.com/Ruu3f/freeGPT/stargazers"><iframe style="width:100%;height:auto;min-width:600px;min-height:400px;" src="https://star-history.com/embed?secret=#Ruu3f/freeGPT&Date" frameBorder="0"></iframe></a>
+[![Star History Chart](https://api.star-history.com/svg?repos=Ruu3f/freeGPT&type=Date)](https://github.com/Ruu3f/freeGPT/stargazers)
+
