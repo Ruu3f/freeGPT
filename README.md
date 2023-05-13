@@ -50,7 +50,7 @@ while True:
     send_prompt()
 ```
 
-## Sources
+## Source
 
 
 | Models        | Websites                                 |
@@ -58,9 +58,16 @@ while True:
 | GPT-3         | [you.com](https://chat.forefront.ai)     |
 | GPT-4         | [forefront.ai](https://chat.forefront.ai)|
 
-### More easier to understand and better models at 16 stars! So what are you waiting for? Go ahead and star this repositry! (Please)
+## Conclusion
+
+### TODO-List:
+- [x] Add GPT-4
+- [ ] Add documentation
+- [ ] Make the over-all library easier to use
+- [ ] Make the over-all library easier to understand
 
 ## Star History
 
 [![Star History Chart](https://api.star-history.com/svg?repos=Ruu3f/freeGPT&type=Date)](https://github.com/Ruu3f/freeGPT/stargazers)
 
+#### I will make the library more easier to use and better way to use the models at 16 stars! So what are you waiting for? Go ahead and star this repositry! (Please)
