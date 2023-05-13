@@ -36,6 +36,7 @@ while True:
 ```
 </details>
 </li>
+  
 <li>
 <details>
   <summary>GPT4</summary>
@@ -58,6 +59,7 @@ while True:
 ```
 </details>
 </li>
+</ul>
 
 | Models        | Websites                                 |
 | ------------- | -----------------------------------------|
