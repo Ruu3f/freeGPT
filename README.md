@@ -4,15 +4,7 @@
 A Python package that gives access to GPT3 &amp; GPT4 models for free.
 <br>
 *Get started by doing: `pip install freeGPT`*
-## Credits
-
-### Original author:
-* [xtekky](https://github.com/xtekky)
-### Current author:
-* Ruu3f
-
 ## Examples
-
 #### GPT-3
 ```python
 from freeGPT import gpt3
@@ -49,25 +41,17 @@ def send_prompt():
 while True:
     send_prompt()
 ```
-
 ## Source
-
-
 | Models        | Websites                                 |
 | ------------- | -----------------------------------------|
 | GPT-3         | [you.com](https://you.com)     |
 | GPT-4         | [forefront.ai](https://chat.forefront.ai)|
-
 ## Conclusion
-
 ### TODO-List:
 - [x] Add GPT-4
 - [ ] Make the library well-documented
 - [ ] Make the over-all library easier to use
 - [ ] Make the over-all library easier to understand
-
 ### Star History
-
 [![Star History Chart](https://api.star-history.com/svg?repos=Ruu3f/freeGPT&type=Date)](https://github.com/Ruu3f/freeGPT/stargazers)
-
 #### I will make the library more easier to use and better way to use the models at 16 stars! So what are you waiting for? Go ahead and star this repositry! (Please)
