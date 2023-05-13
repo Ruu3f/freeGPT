@@ -12,7 +12,11 @@ A Python package that gives access to GPT3 &amp; GPT4 models for free.
 * Ruu3f
 
 ## Examples
-### [gpt3 (you.com)](https://you.com)
+
+<ul>
+<li>
+<details>
+  <summary>GPT3</summary>
 ```python
 from freeGPT import gpt3
 
@@ -30,7 +34,11 @@ def send_prompt():
 while True:
     send_prompt()
 ```
-### [gpt4 (forefront.ai)](https://forefront.ai)
+</details>
+</li>
+<li>
+<details>
+  <summary>GPT4</summary>
 ```python
 from freeGPT import gpt4
 
@@ -48,6 +56,8 @@ def send_prompt():
 while True:
     send_prompt()
 ```
+</details>
+</li>
 
 | Models        | Websites                                 |
 | ------------- | -----------------------------------------|
