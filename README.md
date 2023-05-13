@@ -53,4 +53,4 @@ while True:
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=Ruu3f/freeGPT&type=Date)](https://star-history.com/#Ruu3f/freeGPT&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=Ruu3f/freeGPT&type=Date)](https://github.com/Ruu3f/freeGPT/stargazers)
