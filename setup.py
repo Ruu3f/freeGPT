@@ -19,6 +19,8 @@ setup(
         "freegpt",
         "chatgpt",
         "openai",
+        "gpt3"
+        "gpt4"
         "gpt",
         "ai",
     ],
