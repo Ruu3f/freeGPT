@@ -1,3 +1,5 @@
+#### *Latest: Completing the TODO-List when this repository hits 30 stars.*
+
 [![PyPI version](https://badge.fury.io/py/freeGPT.svg)](https://badge.fury.io/py/freeGPT)
 [![Downloads](https://static.pepy.tech/personalized-badge/freeGPT?period=month&units=international_system&left_color=grey&right_color=brightgreen&left_text=Downloads)](https://pepy.tech/project/freeGPT)
 # freeGPT
@@ -44,7 +46,7 @@ while True:
 ## Source
 | Models        | Websites                                 |
 | ------------- | -----------------------------------------|
-| GPT-3         | [you.com](https://you.com)     |
+| GPT-3         | [you.com](https://you.com)               |
 | GPT-4         | [forefront.ai](https://chat.forefront.ai)|
 ## Conclusion
 ### TODO-List:
@@ -52,7 +54,8 @@ while True:
 - [ ] Make the library well-documented
 - [ ] Make the over-all library easier to use
 - [ ] Make the over-all library easier to understand
+- [ ] Add secondary GPT providers incase primary one is down
 ### Star History
 [![Star History Chart](https://api.star-history.com/svg?repos=Ruu3f/freeGPT&type=Date)](https://github.com/Ruu3f/freeGPT/stargazers)
 #### Original by [xtekky](https://github.com/xtekky), currently maintained by Ruu3f.
-#### Completing the TODO-List when this repository hits 30 stars.
+
