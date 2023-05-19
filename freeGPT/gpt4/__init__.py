@@ -1,7 +1,7 @@
 import os, re, json
 try:
     from tls_client import Session
-except:
+except ImportError:
     os.system("pip install tls_client --no-cache-dir")
 from uuid import uuid4
 from requests import post
@@ -14,7 +14,17 @@ from typing import Generator, Optional
 
 class Account:
     @staticmethod
-    def create(proxy: Optional[str] = None, logging: bool = False):
+    def create(proxy: Optional[str] = None, logging: bool = False) -> str:
+        """
+        Create a new account.
+
+        Args:
+            proxy (Optional[str]): Proxy URL. Defaults to None.
+            logging (bool): Enable logging. Defaults to False.
+
+        Returns:
+            str: The token associated with the created account.
+        """
         proxies = {'http': 'http://' + proxy, 'https': 'http://' + proxy} if proxy else False
 
         start = time()
@@ -91,10 +101,28 @@ class Completion:
         chat_id=None,
         prompt='',
         action_type='new',
-        default_persona='607e41fe-95be-497e-8e97-010a59b2e2c0',  # default
+        default_persona='607e41fe-95be-497e-8e97-010a59b2e2c0',
         model='gpt-4',
         proxy=None
     ) -> ForeFrontResponse:
+        """
+        Create a completion request.
+
+        Args:
+            token: The token associated with the account.
+            chat_id: The chat ID.
+            prompt: The prompt for the completion.
+            action_type: The action type for the completion. Defaults to 'new'.
+            default_persona: The default persona ID. Defaults to '607e41fe-95be-497e-8e97-010a59b2e2c0'.
+            model: The model name. Defaults to 'gpt-4'.
+            proxy: Proxy URL. Defaults to None.
+
+        Returns:
+            ForeFrontResponse: The completion response.
+
+        Raises:
+            Exception: If unable to get the response, please try again later.
+        """
         proxies = {'http': 'http://' + proxy, 'https': 'http://' + proxy} if proxy else None
 
         headers = {
@@ -154,4 +182,4 @@ class Completion:
                 )
                 return final_response
 
-raise Exception('Unable to get the response, please try again later.')
+        raise Exception('Unable to get the response, please try again later.')
