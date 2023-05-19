@@ -10,6 +10,8 @@ from typing import Optional, List, Dict, Any
 
 
 class Completion:
+    """A class that provides methods for creating completion requests."""
+
     @staticmethod
     def create(
         prompt: str,
@@ -26,6 +28,30 @@ class Completion:
         detailed: bool = False,
         proxy: Optional[str] = None
     ) -> dict:
+        """
+        Creates a completion request.
+
+        Args:
+            prompt (str): The prompt text for the completion.
+            page (int, optional): The page number for pagination. Defaults to 1.
+            count (int, optional): The number of results per page. Defaults to 10.
+            safe_search (str, optional): The safe search level. Defaults to 'Moderate'.
+            on_shopping_page (bool, optional): Indicates if the completion is on a shopping page. Defaults to False.
+            mkt (str, optional): The market for the completion. Defaults to ''.
+            response_filter (str, optional): The filter for the response. Defaults to 'WebPages,Translations,TimeZone,Computation,RelatedSearches'.
+            domain (str, optional): The domain for the completion. Defaults to 'youchat'.
+            query_trace_id (str, optional): The trace ID for the query. Defaults to None.
+            chat (list, optional): A list of chat messages. Defaults to None.
+            include_links (bool, optional): Indicates if links should be included in the response. Defaults to False.
+            detailed (bool, optional): Indicates if detailed results should be included in the response. Defaults to False.
+            proxy (str, optional): The proxy server to use. Defaults to None.
+
+        Returns:
+            dict: The completion response as a dictionary.
+
+        Raises:
+            Exception: If unable to get the response.
+        """
         if chat is None:
             chat = []
 
@@ -81,6 +107,12 @@ class Completion:
 
     @staticmethod
     def __get_headers() -> dict:
+        """
+        Returns the headers for the completion request.
+
+        Returns:
+            dict: The headers as a dictionary.
+        """
         return {
             'authority': 'you.com',
             'accept': 'text/event-stream',
@@ -96,5 +128,3 @@ class Completion:
             'cookie': f'safesearch_guest=Moderate; uuid_guest={str(uuid4())}',
             'user-agent': UserAgent().random,
         }
-
-raise Exception('Unable to get the response, please try again later.')
