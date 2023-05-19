@@ -88,7 +88,7 @@ class Account:
         return token
 
 
-class StreamingCompletion:
+class Completion:
     @staticmethod
     def create(
         token=None,
@@ -98,13 +98,8 @@ class StreamingCompletion:
         default_persona='607e41fe-95be-497e-8e97-010a59b2e2c0',  # default
         model='gpt-4',
         proxy=None
-    ) -> Generator[ForeFrontResponse, None, None]:
-        if not token:
-            raise Exception('Token is required!')
-        if not chat_id:
-            chat_id = str(uuid4())
-
-        proxies = { 'http': 'http://' + proxy, 'https': 'http://' + proxy } if proxy else None
+    ) -> ForeFrontResponse:
+        proxies = {'http': 'http://' + proxy, 'https': 'http://' + proxy} if proxy else None
 
         headers = {
             'authority': 'chat-server.tenant-forefront-default.knative.chi.coreweave.com',
@@ -134,64 +129,33 @@ class StreamingCompletion:
             'model': model,
         }
 
-        for chunk in post(
+        response = post(
             'https://chat-server.tenant-forefront-default.knative.chi.coreweave.com/chat',
             headers=headers,
             proxies=proxies,
             json=json_data,
-            stream=True,
-        ).iter_lines():
-            if b'finish_reason":null' in chunk:
-                data = loads(chunk.decode('utf-8').split('data: ')[1])
-                token = data['choices'][0]['delta'].get('content')
+        )
 
-                if token is not None:
-                    yield ForeFrontResponse(
-                        **{
-                            'id': chat_id,
-                            'object': 'text_completion',
-                            'created': int(time()),
-                            'text': token,
-                            'model': model,
-                            'choices': [{'text': token, 'index': 0, 'logprobs': None, 'finish_reason': 'stop'}],
-                            'usage': {
-                                'prompt_tokens': len(prompt),
-                                'completion_tokens': len(token),
-                                'total_tokens': len(prompt) + len(token),
-                            },
-                        }
-                    )
+        if response.status_code == 200:
+            data = response.json()
+            token = data['choices'][0]['delta'].get('content')
 
+            if token is not None:
+                final_response = ForeFrontResponse(
+                    **{
+                        'id': chat_id,
+                        'object': 'text_completion',
+                        'created': int(time()),
+                        'text': token,
+                        'model': model,
+                        'choices': [{'text': token, 'index': 0, 'logprobs': None, 'finish_reason': 'stop'}],
+                        'usage': {
+                            'prompt_tokens': len(prompt),
+                            'completion_tokens': len(token),
+                            'total_tokens': len(prompt) + len(token),
+                        },
+                    }
+                )
+                return final_response
 
-class Completion:
-    @staticmethod
-    def create(
-        token=None,
-        chat_id=None,
-        prompt='',
-        action_type='new',
-        default_persona='607e41fe-95be-497e-8e97-010a59b2e2c0',  # default
-        model='gpt-4',
-        proxy=None
-    ) -> ForeFrontResponse:
-        text = ''
-        final_response = None
-        for response in StreamingCompletion.create(
-            token=token,
-            chat_id=chat_id,
-            prompt=prompt,
-            action_type=action_type,
-            default_persona=default_persona,
-            model=model,
-            proxy=proxy
-        ):
-            if response:
-                final_response = response
-                text += response.text
-
-        if final_response:
-            final_response.text = text
-        else:
-            raise Exception('Unable to get the response, Please try again')
-
-        return final_response
+        raise Exception('Unable to get the response, please try again later.')
