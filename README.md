@@ -7,8 +7,11 @@
 A Python package that gives access to GPT3 &amp; GPT4 models for free.
 <br>
 *Get started by doing: `pip install freeGPT`*
+
 ## Examples
+
 #### GPT-3
+
 ```python
 from freeGPT import gpt3
 
@@ -27,6 +30,7 @@ while True:
     send_prompt()
 ```
 #### GPT-4
+
 ```python
 from freeGPT import gpt4
 
@@ -44,19 +48,22 @@ def send_prompt():
 while True:
     send_prompt()
 ```
+
 ## Source
 | Models        | Websites                                 |
 | ------------- | -----------------------------------------|
 | GPT-3         | [you.com](https://you.com)               |
 | GPT-4         | [forefront.ai](https://chat.forefront.ai)|
-## Conclusion
+
 ### TODO-List:
-- [x] Add GPT-4
-- [ ] Make the library well-documented
-- [ ] Make the over-all library easier to use
-- [ ] Make the over-all library easier to understand
+- [x] Add GPT-4.
+- [x] Make the library well-documented.
+- [x] Make the over-all library easier to use.
+- [x] Make the over-all library easier to understand.
 - [ ] Replace you.com with theb.ai for less failed responses.
+
 ### Star History
 [![Star History Chart](https://api.star-history.com/svg?repos=Ruu3f/freeGPT&type=Date)](https://github.com/Ruu3f/freeGPT/stargazers)
+
 #### Original by [xtekky](https://github.com/xtekky), currently maintained by Ruu3f.
 
