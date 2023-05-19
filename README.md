@@ -40,7 +40,7 @@ print("Token:", token)
 def send_prompt():
     try:
         prompt = input("> ")
-        for response in gpt4.StreamingCompletion.create(token=token, prompt=prompt, model="gpt-4"):
+        for response in gpt4.StreamingCompletion.create(token=token, prompt=prompt):
             print("Response:", response.text, end="")
     except Exception as e:
         print("Error:", str(e))
