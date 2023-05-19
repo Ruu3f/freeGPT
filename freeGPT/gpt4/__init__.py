@@ -1,19 +1,15 @@
-import os
+import os, re, json
 try:
     from tls_client import Session
 except:
     os.system("pip install tls_client --no-cache-dir")
-from json import loads
-from re import findall
-from time import time, sleep
-from typing import Generator, Optional
 from uuid import uuid4
-
-from fake_useragent import UserAgent
 from requests import post
+from time import time, sleep
+from fake_useragent import UserAgent
 from pymailtm import MailTm, Message
-
 from .typing import ForeFrontResponse
+from typing import Generator, Optional
 
 
 class Account:
@@ -65,7 +61,7 @@ class Account:
             if logging:
                 print(new_message.data['id'])
 
-            verification_url = findall(r'https:\/\/clerk\.forefront\.ai\/v1\/verify\?token=\w.+', new_message.text)[0]
+            verification_url = re.findall(r'https:\/\/clerk\.forefront\.ai\/v1\/verify\?token=\w.+', new_message.text)[0]
 
             if verification_url:
                 break
@@ -158,4 +154,4 @@ class Completion:
                 )
                 return final_response
 
-        raise Exception('Unable to get the response, please try again later.')
+raise Exception('Unable to get the response, please try again later.')
