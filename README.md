@@ -55,7 +55,7 @@ while True:
 - [ ] Make the library well-documented
 - [ ] Make the over-all library easier to use
 - [ ] Make the over-all library easier to understand
-- [ ] Add secondary GPT providers incase primary one is down
+- [ ] Replace you.com with theb.ai for less failed responses.
 ### Star History
 [![Star History Chart](https://api.star-history.com/svg?repos=Ruu3f/freeGPT&type=Date)](https://github.com/Ruu3f/freeGPT/stargazers)
 #### Original by [xtekky](https://github.com/xtekky), currently maintained by Ruu3f.
