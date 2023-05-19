@@ -1,4 +1,4 @@
-#### *latest: Thank you all for 12 stars, I am going to complete the third and the fourth thing in the TODO-List. Thanks for all the support.*
+#### *latest: Thank you all for 12 stars, I am going to complete the second, third and the fourth thing in the TODO-List. Thanks for all the support.*
 #### *Latest: Completing the TODO-List when this repository hits 30 stars.*
 
 [![PyPI version](https://badge.fury.io/py/freeGPT.svg)](https://badge.fury.io/py/freeGPT)
