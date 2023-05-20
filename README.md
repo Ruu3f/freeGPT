@@ -60,8 +60,9 @@ while True:
 - [x] Make the over-all library easier to use.
 - [x] Make the over-all library easier to understand.
 - [ ] Replace you.com with theb.ai for less failed responses.
-- [ ] Add text to image generation
 - [ ] Add an internet search model
+- [ ] Add text to image generation
+- [ ] Make a discord bot
 
 ### Star History
 [![Star History Chart](https://api.star-history.com/svg?repos=Ruu3f/freeGPT&type=Date)](https://github.com/Ruu3f/freeGPT/stargazers)
