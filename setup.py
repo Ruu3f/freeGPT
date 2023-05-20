@@ -38,9 +38,10 @@ setup(
     packages=find_packages(),
     install_requires=[
         "pydantic",
-        "fake-useragent",
         "pymailtm",
         "requests",
+        "curl_cffi",
+        "fake-useragent",
     ],
     project_urls={
         "Source": "https://github.com/Ruu3f/freeGPT",
