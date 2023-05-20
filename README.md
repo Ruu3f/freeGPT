@@ -49,7 +49,7 @@ while True:
 ## Source
 | Models        | Websites                                 |
 | ------------- | -----------------------------------------|
-| GPT-3         | [you.com](https://you.com)               |
+| GPT-3         | [theb.ai](https://theb.ai)               |
 | GPT-4         | [forefront.ai](https://chat.forefront.ai)|
 
 ### TODO-List:
