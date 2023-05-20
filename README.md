@@ -12,14 +12,11 @@ A Python package that gives access to GPT3 &amp; GPT4 models for free.
 ```python
 from freeGPT import gpt3
 
-chat = []
-
 def send_prompt():
     try:
         prompt = input("> ")
-        response = gpt3.Completion.create(prompt=prompt, chat=chat)
+        response = gpt3.Completion.create(prompt=prompt)
         print("Response:", response.text)
-        chat.append({"question": prompt, "answer": response.text})
     except Exception as e:
         print("Error:", str(e))
 
@@ -37,8 +34,8 @@ print("Token:", token)
 def send_prompt():
     try:
         prompt = input("> ")
-        for response in gpt4.StreamingCompletion.create(token=token, prompt=prompt):
-            print("Response:", response.text, end="")
+        for response in gpt4.Completion.create(prompt=prompt, token=token):
+            print("Response:", response.text)
     except Exception as e:
         print("Error:", str(e))
 
