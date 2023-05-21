@@ -60,7 +60,7 @@ while True:
 - [ ] Add text to image generation
 - [ ] Make a discord bot
 
-### Star History
+## Star History
 [![Star History Chart](https://api.star-history.com/svg?repos=Ruu3f/freeGPT&type=Date)](https://github.com/Ruu3f/freeGPT/stargazers)
 
 #### Original by [xtekky](https://github.com/xtekky), package & improved code by Ruu3f.
