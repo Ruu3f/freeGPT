@@ -1,3 +1,4 @@
+#### *Latest: Doing the sixth (internet search model) item in TODO-List at 25 stars.* 
 [![PyPI version](https://badge.fury.io/py/freeGPT.svg)](https://badge.fury.io/py/freeGPT)
 [![Downloads](https://static.pepy.tech/personalized-badge/freeGPT?period=month&units=international_system&left_color=grey&right_color=brightgreen&left_text=Downloads)](https://pepy.tech/project/freeGPT)
 # freeGPT
