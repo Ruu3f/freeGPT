@@ -50,8 +50,8 @@ while True:
 | Models            | Websites                                 |
 | ----------------- | -----------------------------------------|
 | gpt3              | [theb.ai](https://theb.ai)               |
-| gpt4              | [useless.com](https://ai.useless.com)    |
 | gpt3.web          | [you.com](https://you.com)               |
+| gpt4              | [useless.com](https://ai.useless.com)    |
 | gpt4.web          | [forefront.ai](https://chat.forefront.ai)|
 
 ### TODO-List:
