@@ -61,8 +61,8 @@ while True:
 - [x] Make the over-all library easier to understand.
 - [x] Replace you.com with theb.ai for less failed responses.
 - [ ] Add a internet search model for GPT-3 & GPT-4
-- [ ] Add text to image generation
 - [ ] Make a discord bot
+- [ ] Add text to image generation *in the discord bot**
 
 ## Star History:
 [![Star History Chart](https://api.star-history.com/svg?repos=Ruu3f/freeGPT&type=Date)](https://github.com/Ruu3f/freeGPT/stargazers)
