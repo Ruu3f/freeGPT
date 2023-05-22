@@ -64,7 +64,8 @@ while True:
 [![Star History Chart](https://api.star-history.com/svg?repos=Ruu3f/freeGPT&type=Date)](https://github.com/Ruu3f/freeGPT/stargazers)
 
 ## Discord Server:
-[![Discord Server Widget](https://discord.com/widget?id=1084505055476056184&theme=dark)
+#### Join my server to support me :D
+#### -> https://discord.gg/NcQ26PrNDp
 
 #### Original by [xtekky](https://github.com/xtekky), package & improved code by Ruu3f.
 
