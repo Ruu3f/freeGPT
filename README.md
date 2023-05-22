@@ -56,7 +56,7 @@ while True:
 - [x] Make the over-all library easier to use.
 - [x] Make the over-all library easier to understand.
 - [x] Replace you.com with theb.ai for less failed responses.
-- [ ] Add an internet search model
+- [ ] Add a internet search model for GPT-3 & GPT-4
 - [ ] Add text to image generation
 - [ ] Make a discord bot
 
