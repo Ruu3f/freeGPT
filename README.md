@@ -45,10 +45,14 @@ while True:
 ```
 
 ## Source:
-| Models        | Websites                                 |
-| ------------- | -----------------------------------------|
-| GPT-3         | [theb.ai](https://theb.ai)               |
-| GPT-4         | [forefront.ai](https://chat.forefront.ai)|
+*Models with .web have internet access on.*
+<br>
+| Models            | Websites                                 |
+| ----------------- | -----------------------------------------|
+| gpt3              | [theb.ai](https://theb.ai)               |
+| gpt4              | [useless.com](https://ai.useless.com)    |
+| gpt3.web          | [you.com](https://you.com)               |
+| gpt4.web          | [forefront.ai](https://chat.forefront.ai)|
 
 ### TODO-List:
 - [x] Add GPT-4.
