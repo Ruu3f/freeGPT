@@ -71,5 +71,3 @@ while True:
 #### Join my server to support me :D
 #### -> [discord.gg/NcQ26PrNDp](https://discord.gg/NcQ26PrNDp)
 
-#### Original by [xtekky](https://github.com/xtekky), package & improved code by Ruu3f.
-
