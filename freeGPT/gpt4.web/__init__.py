@@ -1,4 +1,5 @@
 import os, re, json
+from pydantic import BaseModel
 try:
     from tls_client import Session
 except ImportError:
@@ -8,8 +9,30 @@ from requests import post
 from time import time, sleep
 from fake_useragent import UserAgent
 from pymailtm import MailTm, Message
-from .typing import ForeFrontResponse
-from typing import Generator, Optional
+from typing import Any, List, Generator, Optional
+
+
+class Choice(BaseModel):
+    text: str
+    index: int
+    logprobs: Any
+    finish_reason: str
+
+
+class Usage(BaseModel):
+    prompt_tokens: int
+    completion_tokens: int
+    total_tokens: int
+
+
+class ForeFrontResponse(BaseModel):
+    id: str
+    object: str
+    created: int
+    model: str
+    choices: List[Choice]
+    usage: Usage
+    text: str
 
 
 class Account:
