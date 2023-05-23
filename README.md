@@ -51,7 +51,7 @@ while True:
 | ----------------- | -----------------------------------------|
 | gpt3              | [theb.ai](https://theb.ai)               |
 | gpt3.web          | [you.com](https://you.com)               |
-| gpt4              | [useless.com](https://ai.useless.com)    |
+| gpt4              | [usesless.com](https://ai.usesless.com)    |
 | gpt4.web          | [forefront.ai](https://chat.forefront.ai)|
 
 ### TODO-List:
