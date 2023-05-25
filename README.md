@@ -9,12 +9,12 @@ A Python package that gives access to GPT3 &amp; GPT4 models for free.
 ## Source:
 *Models with .web have internet access on.*
 <br>
-| Models            | Websites                                 |
-| ----------------- | -----------------------------------------|
-| gpt3              | [theb.ai](https://theb.ai)               |
-| gpt3.web          | [you.com](https://you.com)               |
-| gpt4              | [usesless.com](https://ai.usesless.com)  |
-| gpt4.web          | [forefront.ai](https://chat.forefront.ai)|
+| Models            | Websites                                |
+| ----------------- | ----------------------------------------|
+| gpt3              | [theb.ai](https://theb.ai)              |
+| gpt3web          | [you.com](https://you.com)               |
+| gpt4              | [usesless.com](https://ai.usesless.com) |
+| gpt4web          | [forefront.ai](https://chat.forefront.ai)|
 
 ### TODO-List:
 - [x] Add GPT-4.
@@ -35,7 +35,7 @@ A Python package that gives access to GPT3 &amp; GPT4 models for free.
 #### GPT-3:
 
 ```python
-from freeGPT import gpt3 # If you want to use web just replace `gpt3` with `gpt3.web as gpt3` and no other changes needed.
+from freeGPT import gpt3 # If you want to use web just replace `gpt3` with `gpt3web as gpt3` and no other changes needed.
 
 prompt = input("👦 > ")
 resp = gpt3.Completion.create(prompt=prompt)
@@ -44,7 +44,7 @@ print(f"🤖 > {resp.text}")
 #### GPT-4:
 
 ```python
-from freeGPT import gpt4  # If you want to use web just replace `gpt4` with `gpt4.web as gpt4` and no other changes needed.
+from freeGPT import gpt4  # If you want to use web just replace `gpt4` with `gpt4web as gpt4` and no other changes needed.
 
 token = gpt4.Account.create(logging=True) # Don't forget to remove this if you want to use web.
 prompt = input("👦 > ")
