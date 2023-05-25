@@ -9,12 +9,12 @@ A Python package that gives access to GPT3 &amp; GPT4 models for free.
 ## Source:
 *Models with .web have internet access on.*
 <br>
-| Models            | Websites                                |
-| ----------------- | ----------------------------------------|
-| gpt3              | [theb.ai](https://theb.ai)              |
-| gpt3web          | [you.com](https://you.com)               |
-| gpt4              | [usesless.com](https://ai.usesless.com) |
-| gpt4web          | [forefront.ai](https://chat.forefront.ai)|
+| Models            | Websites                                 |
+| ----------------- | -----------------------------------------|
+| gpt3              | [theb.ai](https://theb.ai)               |
+| gpt3web           | [you.com](https://you.com)               |
+| gpt4              | [usesless.com](https://ai.usesless.com)  |
+| gpt4web           | [forefront.ai](https://chat.forefront.ai)|
 
 ### TODO-List:
 - [x] Add GPT-4.
