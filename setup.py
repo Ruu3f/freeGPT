@@ -39,7 +39,6 @@ setup(
     install_requires=[
         "pydantic",
         "pymailtm",
-        "requests",
         "curl_cffi",
         "fake-useragent",
     ],
