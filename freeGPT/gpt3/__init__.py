@@ -22,22 +22,24 @@ class Completion:
             proxy (str, optional): The proxy server to use for the request. Defaults to None.
         """
         headers = {
-            'authority': 'chatbot.theb.ai',
-            'content-type': 'application/json',
-            'origin': 'https://chatbot.theb.ai',
-            'user-agent': UserAgent().random,
+            "authority": "chatbot.theb.ai",
+            "content-type": "application/json",
+            "origin": "https://chatbot.theb.ai",
+            "user-agent": UserAgent().random,
         }
 
-        proxies = {'http': 'http://' + proxy, 'https': 'http://' + proxy} if proxy else None
-
-        response = requests.post(
-            'https://chatbot.theb.ai/api/chat-completion',
-            headers=headers,
-            proxies=proxies,
-            json={'role': 'assistant', 'prompt': prompt, 'options': {}},
+        proxies = (
+            {"http": "http://" + proxy, "https": "http://" + proxy} if proxy else None
         )
 
-        completion = json.loads(response.text)['delta']
+        response = requests.post(
+            "https://chatbot.theb.ai/api/chat-completion",
+            headers=headers,
+            proxies=proxies,
+            json={"role": "assistant", "prompt": prompt, "options": {}},
+        )
+
+        completion = json.loads(response.text)["delta"]
         Completion.message_queue.put(completion)
 
     @staticmethod
@@ -58,4 +60,4 @@ class Completion:
             completion = Completion.message_queue.get(timeout=10)
             yield completion
         except Empty:
-            raise Exception('Unable to get the response, please try again later.')
+            raise Exception("Unable to get the response, please try again later.")
