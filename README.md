@@ -69,4 +69,5 @@ while True:
 
 ## Support me:
 - Join my [Discord Server](https://discord.gg/NcQ26PrNDp) :D
+- Star this repository :D
 
