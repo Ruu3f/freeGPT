@@ -35,37 +35,21 @@ A Python package that gives access to GPT3 &amp; GPT4 models for free.
 #### GPT-3:
 
 ```python
-from freeGPT import gpt3
+from freeGPT import gpt3 # If you want to use web just replace `gpt3` with `gpt3.web as gpt3` and no other changes needed.
 
-def send_prompt():
-    try:
-        prompt = input("> ")
-        response = gpt3.Completion.create(prompt=prompt)
-        print("Response:", response.text)
-    except Exception as e:
-        print("Error:", str(e))
-
-while True:
-    send_prompt()
+prompt = input("👦 > ")
+resp = gpt3.Completion.create(prompt=prompt)
+print(f"🤖 > {resp.text}")
 ```
 #### GPT-4:
 
 ```python
-from freeGPT import gpt4
+from freeGPT import gpt4  # If you want to use web just replace `gpt4` with `gpt4.web as gpt4` and no other changes needed.
 
 token = gpt4.Account.create(logging=True)
-print("Token:", token) 
-
-def send_prompt():
-    try:
-        prompt = input("> ")
-        for response in gpt4.Completion.create(prompt=prompt, token=token):
-            print("Response:", response.text)
-    except Exception as e:
-        print("Error:", str(e))
-
-while True:
-    send_prompt()
+prompt = input("👦 > ")
+resp = gpt4.Completion.create(prompt=prompt, token=token)
+print(f"🤖 > {resp.text}")
 ```
 
 ## Star History:
