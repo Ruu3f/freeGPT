@@ -23,7 +23,7 @@ A Python package that gives access to GPT3 &amp; GPT4 models for free.
 - [x] Make the over-all library easier to understand.
 - [x] Replace you.com with theb.ai for less failed responses.
 - [x] Add a internet search model for GPT-3 & GPT-4
-- [ ] Add text to image generation
+- [ ] Add a text to image generation
 - [ ] Make a discord bot
 
 ## Support me:
