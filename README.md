@@ -6,6 +6,26 @@ A Python package that gives access to GPT3 &amp; GPT4 models for free.
 <br>
 *Get started by doing: `pip install freeGPT`*
 
+## Source:
+*Models with .web have internet access on.*
+<br>
+| Models            | Websites                                 |
+| ----------------- | -----------------------------------------|
+| gpt3              | [theb.ai](https://theb.ai)               |
+| gpt3.web          | [you.com](https://you.com)               |
+| gpt4              | [usesless.com](https://ai.usesless.com)  |
+| gpt4.web          | [forefront.ai](https://chat.forefront.ai)|
+
+### TODO-List:
+- [x] Add GPT-4.
+- [x] Make the library well-documented.
+- [x] Make the over-all library easier to use.
+- [x] Make the over-all library easier to understand.
+- [x] Replace you.com with theb.ai for less failed responses.
+- [ ] Add a internet search model for GPT-3 & GPT-4
+- [ ] Make a discord bot
+- [ ] Add text to image generation
+
 ## Examples:
 
 #### GPT-3:
@@ -43,26 +63,6 @@ def send_prompt():
 while True:
     send_prompt()
 ```
-
-## Source:
-*Models with .web have internet access on.*
-<br>
-| Models            | Websites                                 |
-| ----------------- | -----------------------------------------|
-| gpt3              | [theb.ai](https://theb.ai)               |
-| gpt3.web          | [you.com](https://you.com)               |
-| gpt4              | [usesless.com](https://ai.usesless.com)  |
-| gpt4.web          | [forefront.ai](https://chat.forefront.ai)|
-
-### TODO-List:
-- [x] Add GPT-4.
-- [x] Make the library well-documented.
-- [x] Make the over-all library easier to use.
-- [x] Make the over-all library easier to understand.
-- [x] Replace you.com with theb.ai for less failed responses.
-- [ ] Add a internet search model for GPT-3 & GPT-4
-- [ ] Make a discord bot
-- [ ] Add text to image generation
 
 ## Star History:
 [![Star History Chart](https://api.star-history.com/svg?repos=Ruu3f/freeGPT&type=Date)](https://github.com/Ruu3f/freeGPT/stargazers)
