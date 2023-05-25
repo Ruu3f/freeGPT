@@ -5,7 +5,7 @@ with open("README.md", encoding="utf-8") as f:
 
 setup(
     name="freeGPT",
-    version="1.0.9",
+    version="1.1.0",
     description="freeGPT is a Python package that gives free access to GPT3 and GPT4 models.",
     long_description=README,
     long_description_content_type="text/markdown",
@@ -40,6 +40,7 @@ setup(
         "pydantic",
         "pymailtm",
         "curl_cffi",
+        "requests",
         "fake-useragent",
     ],
     project_urls={
