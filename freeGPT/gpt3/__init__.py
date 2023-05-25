@@ -1,8 +1,9 @@
-from queue import Queue, Empty
+import json
 from threading import Thread
-from typing import Generator, Optional
-from curl_cffi import requests
+from curl_cffi import CurlEasy
+from queue import Queue, Empty
 from fake_useragent import UserAgent
+from typing import Generator, Optional
 
 
 class Completion:
@@ -28,18 +29,25 @@ class Completion:
             "user-agent": UserAgent().random,
         }
 
-        proxies = (
-            {"http": "http://" + proxy, "https": "http://" + proxy} if proxy else None
-        )
+        c = CurlEasy()
+        c.setopt(c.URL, "https://chatbot.theb.ai/api/chat-completion")
+        c.setopt(c.HTTPHEADER, [f"{k}: {v}" for k, v in headers.items()])
+        if proxy:
+            c.setopt(c.PROXY, proxy)
 
-        response = requests.post(
-            "https://chatbot.theb.ai/api/chat-completion",
-            headers=headers,
-            proxies=proxies,
-            json={"role": "assistant", "prompt": prompt, "options": {}},
-        )
+        data = {
+            "role": "assistant",
+            "prompt": prompt,
+            "options": {},
+        }
+        c.setopt(c.POSTFIELDS, json.dumps(data))
 
-        completion = json.loads(response.text)["delta"]
+        c.setopt(c.WRITEFUNCTION, Completion.handle_response)
+        c.perform()
+
+    @staticmethod
+    def handle_response(body):
+        completion = json.loads(body.decode())["delta"]
         Completion.message_queue.put(completion)
 
     @staticmethod
