@@ -46,6 +46,5 @@ setup(
     project_urls={
         "Source": "https://github.com/Ruu3f/freeGPT",
         "Issues": "https://github.com/Ruu3f/freeGPT/issues",
-        "Discussions": "https://github.com/Ruu3f/freeGPT/discussions",
     },
 )
