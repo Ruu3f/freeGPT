@@ -1,6 +1,6 @@
 [![PyPI version](https://badge.fury.io/py/freeGPT.svg)](https://badge.fury.io/py/freeGPT)
 [![Downloads](https://static.pepy.tech/personalized-badge/freeGPT?period=month&units=international_system&left_color=grey&right_color=brightgreen&left_text=Downloads)](https://pepy.tech/project/freeGPT)
-[![License](https://img.shields.io/badge/License-GNUv3-bright&green.svg)](LICENSE)
+[![License](https://img.shields.io/badge/License-GPLv3-bright&green.svg)](LICENSE)
 # freeGPT
 A Python package that gives access to GPT3 &amp; GPT4 models for free.
 <br>
