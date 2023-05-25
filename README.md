@@ -26,6 +26,10 @@ A Python package that gives access to GPT3 &amp; GPT4 models for free.
 - [ ] Make a discord bot
 - [ ] Add text to image generation
 
+## Support me:
+- Join my [Discord Server](https://discord.gg/NcQ26PrNDp) :D
+- Star this repository :D
+
 ## Examples:
 
 #### GPT-3:
@@ -66,8 +70,4 @@ while True:
 
 ## Star History:
 [![Star History Chart](https://api.star-history.com/svg?repos=Ruu3f/freeGPT&type=Date)](https://github.com/Ruu3f/freeGPT/stargazers)
-
-## Support me:
-- Join my [Discord Server](https://discord.gg/NcQ26PrNDp) :D
-- Star this repository :D
 
