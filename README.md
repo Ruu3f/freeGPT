@@ -46,9 +46,9 @@ print(f"🤖 > {resp.text}")
 ```python
 from freeGPT import gpt4  # If you want to use web just replace `gpt4` with `gpt4.web as gpt4` and no other changes needed.
 
-token = gpt4.Account.create(logging=True)
+token = gpt4.Account.create(logging=True) # Don't forget to remove this if you want to use web.
 prompt = input("👦 > ")
-resp = gpt4.Completion.create(prompt=prompt, token=token)
+resp = gpt4.Completion.create(prompt=prompt, token=token) # Don't forget to remove the token parameter here if you want to use web.
 print(f"🤖 > {resp.text}")
 ```
 
