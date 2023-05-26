@@ -1,1 +1,2 @@
-maybe a discord bot for this at 35 stars?
+# Discord bot w/ image gen
+### *at 40 stars*
