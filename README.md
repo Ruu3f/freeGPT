@@ -4,7 +4,7 @@
 # freeGPT
 A Python package that gives access to GPT3 &amp; GPT4 models for free.
 <br>
-*Get started by doing: `pip install freeGPT`*
+*Get started by doing: `pip install freeGPT==1.1.3`*
 
 ## Source:
 *Models with .web have internet access on.*
