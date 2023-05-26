@@ -11,10 +11,8 @@ A Python package that gives access to GPT3 &amp; GPT4 models for free.
 <br>
 | Models            | Websites                                 |
 | ----------------- | -----------------------------------------|
-| gpt3              | [theb.ai](https://theb.ai)               |
-| gpt3web           | [you.com](https://you.com)               |
-| gpt4              | [usesless.com](https://ai.usesless.com)  |
-| gpt4web           | [forefront.ai](https://chat.forefront.ai)|
+| gpt3              | [you.com](https://you.com)               |
+| gpt4              | [forefront.ai](https://chat.forefront.ai)|
 
 ### TODO-List:
 - [x] Add GPT-4.
@@ -22,7 +20,7 @@ A Python package that gives access to GPT3 &amp; GPT4 models for free.
 - [x] Make the over-all library easier to use.
 - [x] Make the over-all library easier to understand.
 - [x] Replace you.com with theb.ai for less failed responses.
-- [x] Add a internet search model for GPT-3 & GPT-4
+- [x] Make GPT-3 & GPT-4 models with web access.
 - [ ] Add a text to image generation model
 - [ ] Make a discord bot
 
@@ -35,11 +33,12 @@ A Python package that gives access to GPT3 &amp; GPT4 models for free.
 #### GPT-3:
 
 ```python
-from freeGPT import gpt3 # If you want to use web just replace `gpt3` with `gpt3web as gpt3` and no other changes needed.
+from freeGPT import gpt3
 
-prompt = input("👦 > ")
-resp = gpt3.Completion.create(prompt=prompt)
-print(f"🤖 > {resp.text}")
+while True:
+    prompt = input("👦 > ")
+    resp = Completion.create(prompt=prompt)
+    print(f"🤖 > {resp['text']}")
 ```
 #### GPT-4:
 
