@@ -2,7 +2,7 @@ from enum import Enum
 from freeGPT import gpt3, gpt4
 
 __author__ = "Ruu3f"
-__version__ = "1.1.2"
+__version__ = "1.1.3"
 __all__ = ["Provider", "Completion"]
 
 
