@@ -5,9 +5,10 @@ try:
 except:
     os.system("pip install tls_client --no-cache-dir")
 from uuid import uuid4
-from pydantic import BaseMaodel
+from pydantic import BaseModel
 from fake_useragent import UserAgent
 from typing import Optional, List, Dict, Any
+from tls_client import Session
 
 
 class Completion:
@@ -24,7 +25,7 @@ class Completion:
         response_filter: str = "WebPages,Translations,TimeZone,Computation,RelatedSearches",
         domain: str = "youchat",
         query_trace_id: str = None,
-        chat: list = None,
+        chat: List[str] = None,
         include_links: bool = False,
         detailed: bool = False,
         proxy: Optional[str] = None,
