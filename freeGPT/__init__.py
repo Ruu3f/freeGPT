@@ -2,7 +2,7 @@ from enum import Enum
 from freeGPT import gpt3, gpt4
 
 __author__ = "Ruu3f"
-__version__ = "1.1.0"
+__version__ = "1.1.1"
 
 class Provider(Enum):
     GPT3 = 'gpt3'
