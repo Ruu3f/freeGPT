@@ -8,7 +8,6 @@ from uuid import uuid4
 from pydantic import BaseModel
 from fake_useragent import UserAgent
 from typing import Optional, List, Dict, Any
-from tls_client import Session
 
 
 class Completion:
