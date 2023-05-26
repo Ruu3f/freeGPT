@@ -37,7 +37,7 @@ from freeGPT import gpt3
 
 while True:
     prompt = input("👦 > ")
-    resp = Completion.create(prompt=prompt)
+    resp = gpt3.Completion.create(prompt=prompt)
     print(f"🤖 > {resp['text']}")
 ```
 #### GPT-4:
@@ -49,7 +49,7 @@ from freeGPT import gpt4
 while True:
     token = Account.create(logging=True)
     prompt = input("👦 > ")
-    resp = Completion.create(prompt=prompt, token=token)
+    resp = gpt4.Completion.create(prompt=prompt, token=token)
     print(f"🤖 > {resp.text}")
 ```
 
