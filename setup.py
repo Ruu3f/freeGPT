@@ -18,10 +18,12 @@ setup(
         "ai-models",
         "freegpt",
         "chatgpt",
+        "python",
         "openai",
-        "gpt3"
-        "gpt4"
+        "gpt3",
+        "gpt4",
         "gpt",
+        "py",
         "ai",
     ],
     python_requires=">=3.6",
