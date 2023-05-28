@@ -16,6 +16,7 @@ setup(
         "artificial-intelligence",
         "machine-learning",
         "ai-models",
+        "gpt4free",
         "freegpt",
         "chatgpt",
         "python",
