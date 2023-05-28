@@ -1,9 +1,10 @@
-import os, re, json
+import re, json, subprocess
 
 try:
     from tls_client import Session
 except ImportError:
-    os.system("pip install tls_client --no-cache-dir")
+    subprocess.check_call(["pip", "install", "tls_client --no-cache-dir"])
+
 from uuid import uuid4
 from requests import post
 from time import time, sleep
@@ -115,9 +116,6 @@ class Account:
         )
 
         token = response.json()["response"]["sessions"][0]["last_active_token"]["jwt"]
-
-        with open("accounts.txt", "a") as f:
-            f.write(f"{mail_address}:{token}\n")
 
         if logging:
             print(time() - start)
