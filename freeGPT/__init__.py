@@ -1,14 +1,15 @@
 from enum import Enum
-from freeGPT import gpt3, gpt4
+from freeGPT import gpt3, gpt4, alpaca
 
 __author__ = "Ruu3f"
-__version__ = "1.1.3"
+__version__ = "1.1.4"
 __all__ = ["Provider", "Completion"]
 
 
 class Provider(Enum):
     """Enum class representing the available GPT providers."""
 
+    ALPACA = "alpaca"
     GPT3 = "gpt3"
     GPT4 = "gpt4"
 
@@ -32,15 +33,30 @@ class Completion:
         Raises:
             Exception: If the provider doesn't exist.
         """
-        if provider == Provider.GPT3:
-            return Completion.__gpt3_service(prompt, **kwargs)
+        if provider == Provider.ALPACA:
+            return Completion._alpaca_service(prompt, **kwargs)
+        elif provider == Provider.GPT3:
+            return Completion._gpt3_service(prompt, **kwargs)
         elif provider == Provider.GPT4:
-            return Completion.__gpt4_service(prompt, **kwargs)
+            return Completion._gpt4_service(prompt, **kwargs)
         else:
             raise Exception("Provider doesn't exist. Please check it again.")
 
     @staticmethod
-    def __gpt3_service(prompt: str) -> str:
+    def _alpaca_service(prompt: str) -> str:
+        """
+        Generates a completion using the Alpaca provider.
+
+        Args:
+            prompt (str): The prompt text for completion.
+
+        Returns:
+            str: The generated completion text.
+        """
+        return alpaca.Completion.create(prompt=prompt)
+
+    @staticmethod
+    def _gpt3_service(prompt: str) -> str:
         """
         Generates a completion using the GPT-3 provider.
 
@@ -54,7 +70,7 @@ class Completion:
         return resp["text"]
 
     @staticmethod
-    def __gpt4_service(prompt: str) -> str:
+    def _gpt4_service(prompt: str) -> str:
         """
         Generates a completion using the GPT-4 provider.
 
