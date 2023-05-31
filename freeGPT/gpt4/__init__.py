@@ -220,4 +220,4 @@ class Completion:
                 )
                 return final_response
 
-        raise Exception("Unable to get the response, please try again later.")
+        raise Exception("Unable to fetch the response.")
