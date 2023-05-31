@@ -32,8 +32,16 @@ A Python package that gives access to GPT3 &amp; GPT4 models for free.
 
 ## Examples:
 
-#### GPT-3:
+#### Alpaca-7b:
+```python
+from freeGPT import alpaca-7b
 
+while True:
+    prompt = input("👦 > ")
+    resp = alpaca-7b.Completion.create(prompt=prompt)
+    print(f"🤖 > {resp}")
+```
+#### GPT-3:
 ```python
 from freeGPT import gpt3
 
@@ -43,7 +51,6 @@ while True:
     print(f"🤖 > {resp['text']}")
 ```
 #### GPT-4:
-
 ```python
 # Uhh, sorry but gpt4 is kinda broken currently, will maybe get fixed in the next update.
 from freeGPT import gpt4
