@@ -49,7 +49,6 @@ from freeGPT import gpt4
 
 while True:
     token = Account.create(logging=True)
-    print(token)
     prompt = input("👦 > ")
     resp = gpt4.Completion.create(prompt=prompt, token=token)
     print(f"🤖 > {resp.text}")
