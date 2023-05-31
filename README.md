@@ -1,4 +1,4 @@
-#### *Latest: A discord bot with GPT chat and IMAGE GENERATION at 40 stars*
+#### *Latest: A non-GPT model at 40 stars*
 [![PyPI version](https://badge.fury.io/py/freeGPT.svg)](https://badge.fury.io/py/freeGPT)
 [![Downloads](https://static.pepy.tech/personalized-badge/freeGPT?period=month&units=international_system&left_color=grey&right_color=brightgreen&left_text=Downloads)](https://pepy.tech/project/freeGPT)
 [![License](https://img.shields.io/badge/License-GPLv3-bright&green.svg)](LICENSE)
@@ -22,8 +22,9 @@ A Python package that gives access to GPT3 &amp; GPT4 models for free.
 - [x] Make the over-all library easier to understand.
 - [x] Replace you.com with theb.ai for less failed responses.
 - [x] Make GPT-3 & GPT-4 models with web access.
-- [ ] Add a text to image generation model
-- [ ] Make a discord bot
+- [ ] Add a non-GPT model.
+- [ ] Add a text to image generation model.
+- [ ] Make a discord bot.
 
 ## Support me:
 - Join my [Discord Server](https://discord.gg/NcQ26PrNDp) :D
