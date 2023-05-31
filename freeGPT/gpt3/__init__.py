@@ -83,7 +83,7 @@ class Completion:
         )
 
         if "youChatToken" not in response.text:
-            raise Exception("Unable to get the response, please try again later.")
+            raise Exception("Unable to fetch the response.")
 
         you_chat_serp_results = re.search(
             r"(?<=event: youChatSerpResults\ndata:)(.*\n)*?(?=event: )", response.text
