@@ -34,11 +34,11 @@ A Python package that gives access to GPT3 &amp; GPT4 models for free.
 
 #### Alpaca-7b:
 ```python
-from freeGPT import alpaca-7b
+from freeGPT import alpaca
 
 while True:
     prompt = input("👦 > ")
-    resp = alpaca-7b.Completion.create(prompt=prompt)
+    resp = alpaca.Completion.create(prompt=prompt)
     print(f"🤖 > {resp}")
 ```
 #### GPT-3:
