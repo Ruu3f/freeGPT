@@ -1,4 +1,4 @@
-import re, json, subprocess
+import os, re, json
 
 try:
     from tls_client import Session
