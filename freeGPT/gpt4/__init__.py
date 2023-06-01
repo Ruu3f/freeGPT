@@ -3,7 +3,7 @@ import re, json, subprocess
 try:
     from tls_client import Session
 except ImportError:
-    subprocess.check_call(["pip", "install", "tls_client --no-cache-dir"])
+    os.system("pip install tls_client --no-cache-dir")
 
 from uuid import uuid4
 from requests import post
