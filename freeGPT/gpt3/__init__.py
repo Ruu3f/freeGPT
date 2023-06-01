@@ -1,9 +1,9 @@
-import re, json, subprocess
+import os, re, json
 
 try:
     from tls_client import Session
-except:
-    subprocess.check_call(["pip", "install", "tls_client --no-cache-dir"])
+except ImportError:
+    os.system("pip install tls_client --no-cache-dir")
 from uuid import uuid4
 from pydantic import BaseModel
 from fake_useragent import UserAgent
