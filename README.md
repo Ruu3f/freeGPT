@@ -58,11 +58,11 @@ while True:
 
 #### Alpaca-7b:
 ```python
-from freeGPT import alpaca
+from freeGPT import alpaca_7b
 
 while True:
     prompt = input("👦 > ")
-    resp = alpaca.Completion.create(prompt=prompt)
+    resp = alpaca_7b.Completion.create(prompt=prompt)
     print(f"🤖 > {resp}")
 ```
 
