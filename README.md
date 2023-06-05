@@ -10,7 +10,7 @@ py -m pip install --upgrade freeGPT
 ```
 
 ## Source:
-*Models with .web have internet access on.*
+*Both GPT models have internet access.*
 <br>
 | Models            | Websites                                             |
 | ----------------- | -----------------------------------------------------|
