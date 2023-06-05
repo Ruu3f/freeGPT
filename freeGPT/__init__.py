@@ -1,15 +1,15 @@
 from enum import Enum
-from freeGPT import gpt3, gpt4, alpaca
+from freeGPT import gpt3, gpt4, alpaca_7b
 
 __author__ = "Ruu3f"
-__version__ = "1.1.5"
+__version__ = "1.1.6"
 __all__ = ["Provider", "Completion"]
 
 
 class Provider(Enum):
     """Enum class representing the available GPT providers."""
 
-    ALPACA = "alpaca"
+    ALPACA_7B = "alpaca_7b"
     GPT3 = "gpt3"
     GPT4 = "gpt4"
 
@@ -19,8 +19,7 @@ class Completion:
 
     @staticmethod
     def create(provider: Provider, prompt: str, **kwargs) -> str:
-        """
-        Generates a completion using the specified provider.
+        """Generates a completion using the specified provider.
 
         Args:
             provider (Provider): The GPT provider to use.
@@ -33,7 +32,7 @@ class Completion:
         Raises:
             Exception: If the provider doesn't exist.
         """
-        if provider == Provider.ALPACA:
+        if provider == Provider.ALPACA_7B:
             return Completion._alpaca_service(prompt, **kwargs)
         elif provider == Provider.GPT3:
             return Completion._gpt3_service(prompt, **kwargs)
@@ -44,8 +43,7 @@ class Completion:
 
     @staticmethod
     def _alpaca_service(prompt: str) -> str:
-        """
-        Generates a completion using the Alpaca provider.
+        """Generates a completion using the Alpaca provider.
 
         Args:
             prompt (str): The prompt text for completion.
@@ -53,12 +51,11 @@ class Completion:
         Returns:
             str: The generated completion text.
         """
-        return alpaca.Completion.create(prompt=prompt)
+        return alpaca_7b.Completion.create(prompt=prompt)
 
     @staticmethod
     def _gpt3_service(prompt: str) -> str:
-        """
-        Generates a completion using the GPT-3 provider.
+        """Generates a completion using the GPT-3 provider.
 
         Args:
             prompt (str): The prompt text for completion.
@@ -71,8 +68,7 @@ class Completion:
 
     @staticmethod
     def _gpt4_service(prompt: str) -> str:
-        """
-        Generates a completion using the GPT-4 provider.
+        """Generates a completion using the GPT-4 provider.
 
         Args:
             prompt (str): The prompt text for completion.
