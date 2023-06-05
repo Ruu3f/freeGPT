@@ -14,9 +14,9 @@ py -m pip install --upgrade freeGPT
 <br>
 | Models            | Websites                                             |
 | ----------------- | -----------------------------------------------------|
-| alpaca            | [chatllama.baseten.co](https://chatllama.baseten.co/)|
 | gpt3              | [you.com](https://you.com)                           |
 | gpt4              | [forefront.ai](https://chat.forefront.ai)            |
+| alpaca_7b         | [chatllama.baseten.co](https://chatllama.baseten.co/)|
 
 ### TODO-List:
 - [x] Add GPT-4.
@@ -35,15 +35,6 @@ py -m pip install --upgrade freeGPT
 
 ## Examples:
 
-#### Alpaca-7b:
-```python
-from freeGPT import alpaca
-
-while True:
-    prompt = input("👦 > ")
-    resp = alpaca.Completion.create(prompt=prompt)
-    print(f"🤖 > {resp}")
-```
 #### GPT-3:
 ```python
 from freeGPT import gpt3
@@ -63,6 +54,16 @@ while True:
     prompt = input("👦 > ")
     resp = gpt4.Completion.create(prompt=prompt, token=token)
     print(f"🤖 > {resp.text}")
+```
+
+#### Alpaca-7b:
+```python
+from freeGPT import alpaca
+
+while True:
+    prompt = input("👦 > ")
+    resp = alpaca.Completion.create(prompt=prompt)
+    print(f"🤖 > {resp}")
 ```
 
 ## Star History:
