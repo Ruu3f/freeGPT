@@ -41,19 +41,24 @@ from freeGPT import gpt3
 
 while True:
     prompt = input("👦 > ")
-    resp = gpt3.Completion.create(prompt=prompt)
-    print(f"🤖 > {resp['text']}")
+    try:
+        resp = gpt3.Completion.create(prompt=prompt)
+        print(f"🤖 > {str(resp['text'])}")
+    except Exception as e:
+        print(f"🤖 > {str(e)}")
 ```
 #### GPT-4:
 ```python
-# Uhh, sorry but gpt4 is kinda broken currently, will maybe get fixed in the next update.
 from freeGPT import gpt4
 
 while True:
-    token = Account.create(logging=True)
+    token = gpt4.Account.create(logging=True)
     prompt = input("👦 > ")
-    resp = gpt4.Completion.create(prompt=prompt, token=token)
-    print(f"🤖 > {resp.text}")
+    try:
+        resp = gpt4.Completion.create(prompt=prompt, token=token)
+        print(f"🤖 > {str(resp.text)}")
+    except Exception as e:
+        print(f"🤖 > {str(e)}")
 ```
 
 #### Alpaca-7b:
@@ -62,8 +67,11 @@ from freeGPT import alpaca_7b
 
 while True:
     prompt = input("👦 > ")
-    resp = alpaca_7b.Completion.create(prompt=prompt)
-    print(f"🤖 > {resp}")
+    try:
+        resp = alpaca_7b.Completion.create(prompt=prompt)
+        print(f"🤖 > {str(resp)}")
+    except Exception as e:
+        print(f"🤖 > {str(e)}")
 ```
 
 ## Star History:
