@@ -12,10 +12,11 @@ py -m pip install --upgrade freeGPT
 ## Source:
 *Models with .web have internet access on.*
 <br>
-| Models            | Websites                                 |
-| ----------------- | -----------------------------------------|
-| gpt3              | [you.com](https://you.com)               |
-| gpt4              | [forefront.ai](https://chat.forefront.ai)|
+| Models            | Websites                                             |
+| ----------------- | -----------------------------------------------------|
+| alpaca            | [chatllama.baseten.co](https://chatllama.baseten.co/)|
+| gpt3              | [you.com](https://you.com)                           |
+| gpt4              | [forefront.ai](https://chat.forefront.ai)            |
 
 ### TODO-List:
 - [x] Add GPT-4.
