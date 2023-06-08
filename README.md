@@ -9,7 +9,7 @@ Get started by installing the package:
 ```
 py -m pip install --upgrade freeGPT
 ```
-*Or add our [Discord bot](https://dsc.gg/freegpt). Its [open-source](/freeGPT-bot)!*
+*Or add our [Discord bot](https://dsc.gg/freegpt). Its [open-sourced](/freeGPT-bot)!*
 
 ## Source:
 *Both GPT models have internet access.*
