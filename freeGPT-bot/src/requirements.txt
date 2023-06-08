@@ -1,0 +1,3 @@
+freeGPT
+py-cord
+aiosqlite
