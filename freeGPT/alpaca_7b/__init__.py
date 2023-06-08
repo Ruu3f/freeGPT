@@ -32,12 +32,12 @@ class Completion:
             "Sec-Fetch-Site": "cross-site",
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
         }
-        r = requests.post(
+        resp = requests.post(
             "https://us-central1-arched-keyword-306918.cloudfunctions.net/run-inference-1",
             headers=headers,
             json={"prompt": prompt},
         ).json()
         try:
-            return r["completion"]
+            return resp["completion"]
         except:
             raise Exception("Unable to fetch the response.")
