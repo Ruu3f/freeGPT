@@ -28,8 +28,8 @@ py -m pip install --upgrade freeGPT
 - [x] Replace you.com with theb.ai for less failed responses.
 - [x] Make GPT-3 & GPT-4 models with web access.
 - [x] Add a non-GPT model.
+- [x] Make a discord bot.
 - [ ] Add a text to image generation model.
-- [ ] Make a discord bot.
 
 ## Support me:
 - Join my [Discord Server](https://discord.gg/NcQ26PrNDp) :D
