@@ -1,13 +1,13 @@
 import os, re, json
+from typing import Optional, List, Dict, Any
+from uuid import uuid4
 
 try:
     from tls_client import Session
 except ImportError:
     os.system("pip install tls_client --no-cache-dir")
-from uuid import uuid4
-from pydantic import BaseModel
+
 from fake_useragent import UserAgent
-from typing import Optional, List, Dict, Any
 
 
 class Completion:
@@ -23,12 +23,12 @@ class Completion:
         mkt: str = "",
         response_filter: str = "WebPages,Translations,TimeZone,Computation,RelatedSearches",
         domain: str = "youchat",
-        query_trace_id: str = None,
-        chat: List[str] = None,
+        query_trace_id: Optional[str] = None,
+        chat: Optional[List[str]] = None,
         include_links: bool = False,
         detailed: bool = False,
         proxy: Optional[str] = None,
-    ) -> dict:
+    ) -> Dict[str, Any]:
         """
         Creates a completion request.
 
@@ -65,7 +65,7 @@ class Completion:
         client.proxies = proxies
 
         response = client.get(
-            f"https://you.com/api/streamingSearch",
+            "https://you.com/api/streamingSearch",
             params={
                 "q": prompt,
                 "page": page,
@@ -86,7 +86,8 @@ class Completion:
             raise Exception("Unable to fetch the response.")
 
         you_chat_serp_results = re.search(
-            r"(?<=event: youChatSerpResults\ndata:)(.*\n)*?(?=event: )", response.text
+            r"(?<=event: youChatSerpResults)\ndata:)(.*\n)*?(?=event: )",
+            response.text,
         ).group()
         third_party_search_results = re.search(
             r"(?<=event: thirdPartySearchResults\ndata:)(.*\n)*?(?=event: )",
@@ -95,9 +96,7 @@ class Completion:
 
         text = "".join(re.findall(r'{"youChatToken": "(.*?)"}', response.text))
 
-        extra = {
-            "youChatSerpResults": json.loads(you_chat_serp_results),
-        }
+        extra = {"youChatSerpResults": json.loads(you_chat_serp_results)}
 
         result = {
             "text": text.replace("\\n", "\n").replace("\\\\", "\\").replace('\\"', '"')
@@ -114,7 +113,7 @@ class Completion:
         return result
 
     @staticmethod
-    def __get_headers() -> dict:
+    def __get_headers() -> Dict[str, str]:
         """
         Returns the headers for the completion request.
 
