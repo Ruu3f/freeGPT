@@ -1,17 +1,16 @@
-import os, re, json
+import os, re
 
 try:
     from tls_client import Session
 except ImportError:
     os.system("pip install tls_client --no-cache-dir")
 
-from uuid import uuid4
 from requests import post
 from time import time, sleep
-from fake_useragent import UserAgent
-from pymailtm import MailTm, Message
-from typing import Any, List, Generator, Optional
 from pydantic import BaseModel
+from pymailtm import MailTm, Message
+from fake_useragent import UserAgent
+from typing import Any, List, Optional
 
 
 class Choice(BaseModel):
@@ -221,3 +220,5 @@ class Completion:
                 return final_response
 
         raise Exception("Unable to fetch the response.")
+
+print(Completion.create(prompt="hi").text)
