@@ -39,5 +39,5 @@ class Completion:
         ).json()
         try:
             return resp["completion"]
-        except:
+        except KeyError:
             raise Exception("Unable to fetch the response.")
