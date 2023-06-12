@@ -1,13 +1,12 @@
 import os, re, json
-from typing import Optional, List, Dict, Any
-from uuid import uuid4
 
 try:
     from tls_client import Session
 except ImportError:
     os.system("pip install tls_client --no-cache-dir")
-
+from uuid import uuid4
 from fake_useragent import UserAgent
+from typing import Optional, List
 
 
 class Completion:
@@ -18,17 +17,17 @@ class Completion:
         prompt: str,
         page: int = 1,
         count: int = 10,
-        safe_search: str = "Moderate",
+        safe_search: str = "Off",
         on_shopping_page: bool = False,
         mkt: str = "",
         response_filter: str = "WebPages,Translations,TimeZone,Computation,RelatedSearches",
         domain: str = "youchat",
-        query_trace_id: Optional[str] = None,
-        chat: Optional[List[str]] = None,
+        query_trace_id: str = None,
+        chat: List[str] = None,
         include_links: bool = False,
         detailed: bool = False,
-        proxy: Optional[str] = None,
-    ) -> Dict[str, Any]:
+        proxies: Optional[str] = None,
+    ) -> dict:
         """
         Creates a completion request.
 
@@ -56,16 +55,12 @@ class Completion:
         if chat is None:
             chat = []
 
-        proxies = (
-            {"http": "http://" + proxy, "https": "http://" + proxy} if proxy else None
-        )
-
         client = Session(client_identifier="chrome_108")
         client.headers = Completion.__get_headers()
         client.proxies = proxies
 
         response = client.get(
-            "https://you.com/api/streamingSearch",
+            f"https://you.com/api/streamingSearch",
             params={
                 "q": prompt,
                 "page": page,
@@ -86,8 +81,7 @@ class Completion:
             raise Exception("Unable to fetch the response.")
 
         you_chat_serp_results = re.search(
-            r"(?<=event: youChatSerpResults)\ndata:)(.*\n)*?(?=event: )",
-            response.text,
+            r"(?<=event: youChatSerpResults\ndata:)(.*\n)*?(?=event: )", response.text
         ).group()
         third_party_search_results = re.search(
             r"(?<=event: thirdPartySearchResults\ndata:)(.*\n)*?(?=event: )",
@@ -96,7 +90,9 @@ class Completion:
 
         text = "".join(re.findall(r'{"youChatToken": "(.*?)"}', response.text))
 
-        extra = {"youChatSerpResults": json.loads(you_chat_serp_results)}
+        extra = {
+            "youChatSerpResults": json.loads(you_chat_serp_results),
+        }
 
         result = {
             "text": text.replace("\\n", "\n").replace("\\\\", "\\").replace('\\"', '"')
@@ -113,7 +109,7 @@ class Completion:
         return result
 
     @staticmethod
-    def __get_headers() -> Dict[str, str]:
+    def __get_headers() -> dict:
         """
         Returns the headers for the completion request.
 
