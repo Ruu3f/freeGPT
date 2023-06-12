@@ -220,5 +220,3 @@ class Completion:
                 return final_response
 
         raise Exception("Unable to fetch the response.")
-
-print(Completion.create(prompt="hi").text)
