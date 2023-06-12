@@ -49,8 +49,9 @@ from freeGPT import gpt3
 while True:
     prompt = input("👦 > ")
     try:
-        # There is also a 'proxy' parameter.
-        resp = gpt3.Completion.create(prompt=prompt)
+        # Remove the 'proxy' variable and the 'proxies' parameter if you don't want to use a proxy.
+        proxy = "Your proxies IP"
+        resp = gpt3.Completion.create(prompt=prompt, chat=[], proxies={"http": "http://" + proxy, "https": "http://" + proxy})
         print(f"🤖 > {str(resp['text'])}")
     except Exception as e:
         print(f"🤖 > {str(e)}")
