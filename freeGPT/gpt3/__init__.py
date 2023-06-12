@@ -60,7 +60,7 @@ class Completion:
         client.proxies = proxies
 
         response = client.get(
-            f"https://you.com/api/streamingSearch",
+            "https://you.com/api/streamingSearch",
             params={
                 "q": prompt,
                 "page": page,
