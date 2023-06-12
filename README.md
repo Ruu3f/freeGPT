@@ -2,7 +2,7 @@
 [![Downloads](https://static.pepy.tech/personalized-badge/freeGPT?period=month&units=international_system&left_color=grey&right_color=brightgreen&left_text=Downloads)](https://pepy.tech/project/freeGPT)
 [![License](https://img.shields.io/badge/License-GPLv3-bright&green.svg)](LICENSE)
 # freeGPT
-A Python package that gives access to GPT3 &amp; GPT4 models for free.
+freeGPT is a Python package that gives free access to GPT3 and GPT4 and more models.
 <br>
 Get started by installing the package:
 ```
