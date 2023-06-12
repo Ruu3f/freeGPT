@@ -57,7 +57,7 @@ class Completion:
             chat = []
 
         proxies = (
-            {"http": "http://" + proxy, "https": "http://" + proxy} if proxy else {}
+            {"http": "http://" + proxy, "https": "http://" + proxy} if proxy else None
         )
 
         client = Session(client_identifier="chrome_108")
