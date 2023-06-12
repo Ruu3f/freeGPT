@@ -5,7 +5,7 @@ with open("README.md", encoding="utf-8") as f:
 
 setup(
     name="freeGPT",
-    version="1.1.6",
+    version="1.1.7",
     description="freeGPT is a Python package that gives free access to GPT and more models.",
     long_description=README,
     long_description_content_type="text/markdown",
