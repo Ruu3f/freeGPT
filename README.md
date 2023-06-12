@@ -49,7 +49,7 @@ from freeGPT import gpt3
 while True:
     prompt = input("👦 > ")
     try:
-        resp = gpt3.Completion.create(prompt=prompt)
+        resp = gpt3.Completion.create(prompt=prompt) # There is also a 'proxy' parameter if you want to use it.
         print(f"🤖 > {str(resp['text'])}")
     except Exception as e:
         print(f"🤖 > {str(e)}")
