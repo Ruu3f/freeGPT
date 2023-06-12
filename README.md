@@ -51,7 +51,7 @@ while True:
     try:
         # Remove the 'proxy' variable and the 'proxies' parameter if you don't want to use a proxy.
         proxy = "Your proxies IP"
-        resp = gpt3.Completion.create(prompt=prompt, chat=[], proxies={"http": "http://" + proxy, "https": "http://" + proxy})
+        resp = gpt3.Completion.create(prompt=prompt, chat=[], proxies={"https": "http://" + proxy}) # Add more proxies such as http if you want.
         print(f"🤖 > {str(resp['text'])}")
     except Exception as e:
         print(f"🤖 > {str(e)}")
