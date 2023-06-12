@@ -128,6 +128,6 @@ class Completion:
             "sec-fetch-dest": "empty",
             "sec-fetch-mode": "cors",
             "sec-fetch-site": "same-origin",
-            "cookie": f"safesearch_guest=Moderate; uuid_guest={str(uuid4())}",
+            "cookie": f"safesearch_guest=Off; uuid_guest={str(uuid4())}",
             "user-agent": UserAgent().random,
         }
