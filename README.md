@@ -31,8 +31,9 @@ py -m pip install --upgrade freeGPT
 - [ ] Add a text to image generation model.
 
 ## Support me:
+- Star this repository! :D
 - Join my [Discord Server](https://discord.gg/NcQ26PrNDp) :D
-- Star this repository :D
+<img src="https://discordapp.com/api/guilds/1084505055476056184/widget.png?style=banner2">
 
 ## Discord bot:
 - Add the official freeGPT discord bot [here](https://dsc.gg/freegpt)
