@@ -11,16 +11,15 @@ py -m pip install --upgrade freeGPT
 ***Or add our [Discord bot](https://dsc.gg/freegpt), its [Open Sourced!](https://github.com/Ruu3f/freeGPT-discord-bot)***
 
 ## Source:
-*Both GPT models have internet access.*
+*GPT-3 has internet access.*
 <br>
 | Models            | Websites                                             |
 | ----------------- | -----------------------------------------------------|
-| gpt3              | [you.com](https://you.com)                           |
-| gpt4              | [forefront.ai](https://chat.forefront.ai)            |
+| gpt3              | [you.com](https://you.com/)                          |
+| gpt4              | [ava-ai-ef611.web.app](https://ava-ai-ef611.web.app/)|
 | alpaca_7b         | [chatllama.baseten.co](https://chatllama.baseten.co/)|
 
 ### TODO-List:
-- [x] Add GPT-4.
 - [x] Make the library well-documented.
 - [x] Make the over-all library easier to use.
 - [x] Make the over-all library easier to understand.
@@ -53,7 +52,7 @@ while True:
     try:
         # Remove the 'proxy' variable and the 'proxies' parameter if you don't want to use a proxy.
         proxy = "Your proxies IP"
-        resp = gpt3.Completion.create(prompt=prompt, chat=[], proxies={"https": "https://" + proxy})
+        resp = gpt3.Completion.create(prompt=prompt, chat=[], proxies={"https": "http://" + proxy})
         print(f"🤖 > {str(resp['text'])}")
     except Exception as e:
         print(f"🤖 > {str(e)}")
