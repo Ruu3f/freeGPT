@@ -5,7 +5,7 @@ with open("README.md", encoding="utf-8") as f:
 
 setup(
     name="freeGPT",
-    version="1.1.8",
+    version="1.1.9",
     description="freeGPT is a Python package that gives free access to GPT and more models.",
     long_description=README,
     long_description_content_type="text/markdown",
@@ -17,13 +17,14 @@ setup(
         "machine-learning",
         "ai-models",
         "chatllama",
-        "alpaca-7b",
         "gpt4free",
         "freegpt",
         "chatgpt",
         "python",
         "alpaca",
         "openai",
+        "model",
+        "free",
         "gpt3",
         "gpt4",
         "gpt",
@@ -43,15 +44,12 @@ setup(
     ],
     packages=find_packages(),
     install_requires=[
-        "pydantic",
-        "pymailtm",
-        "curl_cffi",
         "requests",
         "fake-useragent",
     ],
     project_urls={
         "Source": "https://github.com/Ruu3f/freeGPT",
         "Issues": "https://github.com/Ruu3f/freeGPT/issues",
-        "Discord": "http://dsc.gg/ruu3fstudio",
+        "Discord": "https://dsc.gg/ruu3fstudio",
     },
 )
