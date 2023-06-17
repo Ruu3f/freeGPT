@@ -27,7 +27,7 @@ py -m pip install --upgrade freeGPT
 - [x] Make GPT-3 & GPT-4 models with web access.
 - [x] Add a non-GPT model.
 - [x] Make a discord bot.
-- [ ] Add a text to image generation model.
+- [ ] Add a image generation model.
 
 ## Support me:
 - Star this repository! :D
@@ -62,11 +62,10 @@ while True:
 from freeGPT import gpt4
 
 while True:
-    token = gpt4.Account.create(logging=True)
     prompt = input("👦 > ")
     try:
-        resp = gpt4.Completion.create(prompt=prompt, token=token)
-        print(f"🤖 > {str(resp.text)}")
+        resp = gpt4.Completion.create(prompt=prompt)
+        print(f"🤖 > {str(resp)}")
     except Exception as e:
         print(f"🤖 > {str(e)}")
 ```
