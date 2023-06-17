@@ -1,9 +1,5 @@
-import os, re, json
-
-try:
-    from tls_client import Session
-except ImportError:
-    os.system("pip install tls_client --no-cache-dir")
+import re, json
+import subprocess
 from uuid import uuid4
 from fake_useragent import UserAgent
 from typing import Optional, List
@@ -20,10 +16,10 @@ class Completion:
         safe_search: str = "Off",
         on_shopping_page: bool = False,
         mkt: str = "",
-        response_filter: str = "WebPages,Translations,TimeZone,Computation,RelatedSearches",
+        response_filter: str = "WebPages, Translations, Computation, RelatedSearches",
         domain: str = "youchat",
-        query_trace_id: str = None,
-        chat: List[str] = None,
+        query_trace_id: Optional[str] = None,
+        chat: Optional[List[str]] = None,
         include_links: bool = False,
         detailed: bool = False,
         proxies: Optional[str] = None,
@@ -35,7 +31,7 @@ class Completion:
             prompt (str): The prompt text for the completion.
             page (int, optional): The page number for pagination. Defaults to 1.
             count (int, optional): The number of results per page. Defaults to 10.
-            safe_search (str, optional): The safe search level. Defaults to 'Moderate'.
+            safe_search (str, optional): The safe search level. Defaults to 'Off'.
             on_shopping_page (bool, optional): Indicates if the completion is on a shopping page. Defaults to False.
             mkt (str, optional): The market for the completion. Defaults to ''.
             response_filter (str, optional): The filter for the response. Defaults to 'WebPages,Translations,TimeZone,Computation,RelatedSearches'.
@@ -44,7 +40,7 @@ class Completion:
             chat (list, optional): A list of chat messages. Defaults to None.
             include_links (bool, optional): Indicates if links should be included in the response. Defaults to False.
             detailed (bool, optional): Indicates if detailed results should be included in the response. Defaults to False.
-            proxy (str, optional): The proxy server to use. Defaults to None.
+            proxies (str, optional): The proxy server to use. Defaults to None.
 
         Returns:
             dict: The completion response as a dictionary.
@@ -55,7 +51,13 @@ class Completion:
         if chat is None:
             chat = []
 
-        client = Session(client_identifier="chrome_108")
+        try:
+            import tls_client
+        except ImportError:
+            subprocess.run(["pip", "install", "tls_client", "--no-cache-dir"])
+            import tls_client
+
+        client = tls_client.Session(client_identifier="chrome_108")
         client.headers = Completion.__get_headers()
         client.proxies = proxies
 
@@ -121,10 +123,10 @@ class Completion:
             "accept": "text/event-stream",
             "accept-language": "en,fr-FR;q=0.9,fr;q=0.8,es-ES;q=0.7,es;q=0.6,en-US;q=0.5,am;q=0.4,de;q=0.3",
             "cache-control": "no-cache",
-            "referer": "https://you.com/search?q=who+are+you&tbm=youchat",
+            "referer": "https://you.com/search?q=hi&tbm=youchat",
             "sec-ch-ua": '"Not_A Brand";v="99", "Google Chrome";v="109", "Chromium";v="109"',
             "sec-ch-ua-mobile": "?0",
-            "sec-ch-ua-platform": '"Windows"',
+            "sec-ch-ua-platform": '"Linux"',
             "sec-fetch-dest": "empty",
             "sec-fetch-mode": "cors",
             "sec-fetch-site": "same-origin",
