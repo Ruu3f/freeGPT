@@ -30,8 +30,8 @@ py -m pip install --upgrade freeGPT
 - [ ] Add a image generation model.
 
 ## Support this repository:
-- Add the [Discord Bot](https://dsc.gg/freeGPT) :D
 - Star this repository! :D
+- Add the [Discord Bot](https://dsc.gg/freeGPT) :D
 - Join my [Discord Server](https://discord.gg/NcQ26PrNDp):
 
 [![DiscordWidget](https://discordapp.com/api/guilds/1084505055476056184/widget.png?style=banner2)](https://discord.gg/NcQ26PrNDp)
