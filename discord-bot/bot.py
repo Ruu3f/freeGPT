@@ -36,7 +36,15 @@ async def on_ready():
                 name=f"{len(bot.guilds)} servers.",
             ),
         )
-        await asyncio.sleep(300)
+        await asyncio.sleep(10)
+        await bot.change_presence(
+            status=discord.Status.online,
+            activity=discord.Activity(
+                type=discord.ActivityType.watching,
+                name=f"f?help | /help.",
+            ),
+        )
+        await asyncio.sleep(10)
 
 
 @bot.hybrid_command(name="help", description="Get help.")
