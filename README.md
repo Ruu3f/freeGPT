@@ -34,7 +34,7 @@ py -m pip install --upgrade freeGPT
 - Add the [Discord Bot](https://dsc.gg/freeGPT) :D
 - Join my [Discord Server](https://discord.gg/NcQ26PrNDp):
 
-[![DiscordWidget](https://discordapp.com/api/guilds/1084505055476056184/widget.png?style=banner2)](https://discord.gg/NcQ26PrNDp)
+[![DiscordWidget](https://discordapp.com/api/guilds/1120833966035976273/widget.png?style=banner2)](https://discord.gg/hQ4Uh4Cm8G)
 
 ## Discord bot:
 - Add the official freeGPT discord bot [here](https://dsc.gg/freegpt)
