@@ -40,7 +40,7 @@ py -m pip install --upgrade freeGPT
 - Add the official freeGPT discord bot [here](https://dsc.gg/freegpt)
 - This bot has ALL the models in this repository available.
 - Its interactive, fast and overall easy to use.
-- And lastly its [Open Sourced!](https://github.com/Ruu3f/freeGPT/tree/main/discord-bot)
+- And lastly its [Open Sourced](https://github.com/Ruu3f/freeGPT/tree/main/discord-bot)!
 
 ## Examples:
 
