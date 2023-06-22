@@ -1,5 +1,3 @@
-Join my Discord server for live chat and support.
-<br>
 [![PyPI version](https://badge.fury.io/py/freeGPT.svg)](https://badge.fury.io/py/freeGPT)
 [![Downloads](https://static.pepy.tech/personalized-badge/freeGPT?period=month&units=international_system&left_color=grey&right_color=brightgreen&left_text=Downloads)](https://pepy.tech/project/freeGPT)
 [![License](https://img.shields.io/badge/License-GPLv3-bright&green.svg)](LICENSE)
@@ -10,6 +8,7 @@ Get started by installing the package:
 ```
 py -m pip install --upgrade freeGPT
 ```
+Join my [Discord Server](https://discord.gg/XH6pUGkwRr) for live chat and support or if you have any issues with this package.
 ***Or add our [Discord bot](https://dsc.gg/freegpt), its [Open Sourced!](https://github.com/Ruu3f/freeGPT/tree/main/discord-bot)***
 
 ## Source:
