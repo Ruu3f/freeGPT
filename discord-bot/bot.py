@@ -6,18 +6,12 @@ intents = discord.Intents.default()
 intents.message_content = True
 
 bot = commands.Bot(command_prefix="f?", intents=intents, help_command=None)
-database = None
-
-
-async def connect_to_database():
-    return await aiosqlite.connect("database.db")
 
 
 @bot.event
 async def on_ready():
-    global database
-    database = await connect_to_database()
-    await database.execute(
+    db = await aiosqlite.connect("database.db")
+    await db.execute(
         """
         CREATE TABLE IF NOT EXISTS datastorage (
             guilds INTEGER,
@@ -26,22 +20,19 @@ async def on_ready():
         )
         """
     )
-    await database.commit()
+    await db.commit()
     print(f"{bot.user.name} has connected to Discord!")
+    try:
+        commands = await bot.tree.sync()
+        print(f"Synced {len(commands)} commands.")
+    except Exception as e:
+        print(e)
     while True:
         await bot.change_presence(
             status=discord.Status.online,
             activity=discord.Activity(
                 type=discord.ActivityType.watching,
-                name=f"{len(bot.guilds)} servers.",
-            ),
-        )
-        await asyncio.sleep(10)
-        await bot.change_presence(
-            status=discord.Status.online,
-            activity=discord.Activity(
-                type=discord.ActivityType.watching,
-                name=f"f?help | /help.",
+                name=f"{len(bot.guilds)} servers | /help",
             ),
         )
         await asyncio.sleep(10)
@@ -62,7 +53,8 @@ async def help(ctx):
 @commands.has_guild_permissions(manage_channels=True)
 @commands.bot_has_guild_permissions(manage_channels=True)
 async def setup(ctx, model: str):
-    cursor = await database.execute(
+    db = await aiosqlite.connect("database.db")
+    cursor = await db.execute(
         "SELECT channels, model FROM datastorage WHERE guilds = ?", (ctx.guild.id,)
     )
     data = await cursor.fetchone()
@@ -74,7 +66,7 @@ async def setup(ctx, model: str):
 
     if model.lower() in ["alpaca_7b", "gpt3", "gpt4"]:
         channel = await ctx.guild.create_text_channel("freegpt", slowmode_delay=10)
-        await database.execute(
+        await db.execute(
             "INSERT OR REPLACE INTO datastorage (guilds, channels, model) VALUES (?, ?, ?)",
             (
                 ctx.guild.id,
@@ -82,7 +74,7 @@ async def setup(ctx, model: str):
                 model,
             ),
         )
-        await database.commit()
+        await db.commit()
         await ctx.send(f"Successfully set the channel to {channel.mention}.")
     else:
         await ctx.send(
@@ -92,8 +84,9 @@ async def setup(ctx, model: str):
 
 @bot.hybrid_command(name="reset", description="Reset the chatbot.")
 @commands.has_guild_permissions(manage_channels=True)
-async def reset_gpt(ctx):
-    cursor = await database.execute(
+async def reset(ctx):
+    db = await aiosqlite.connect("database.db")
+    cursor = await db.execute(
         "SELECT channels, model FROM datastorage WHERE guilds = ?", (ctx.guild.id,)
     )
     data = await cursor.fetchone()
@@ -103,23 +96,19 @@ async def reset_gpt(ctx):
         )
         return
 
-    await database.execute("DELETE FROM datastorage WHERE guilds = ?", (ctx.guild.id,))
-    await database.commit()
+    await db.execute("DELETE FROM datastorage WHERE guilds = ?", (ctx.guild.id,))
+    await db.commit()
     await ctx.send("The chatbot has been reset.")
 
 
 @bot.event
-async def on_command_error(ctx, error):
-    await ctx.send(error)
-
-
-@bot.event
 async def on_message(message):
+    db = await aiosqlite.connect("database.db")
     await bot.process_commands(message)
     if message.author == bot.user:
         return
 
-    cursor = await database.execute(
+    cursor = await db.execute(
         "SELECT channels, model FROM datastorage WHERE guilds = ?", (message.guild.id,)
     )
     data = await cursor.fetchone()
