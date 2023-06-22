@@ -8,9 +8,9 @@ Get started by installing the package:
 ```
 py -m pip install --upgrade freeGPT
 ```
-Join my [Discord Server](https://discord.gg/XH6pUGkwRr) for live chat and support or if you have any issues with this package.
 <br>
 ***Or add our [Discord bot](https://dsc.gg/freegpt), its [Open Sourced!](https://github.com/Ruu3f/freeGPT/tree/main/discord-bot)***
+Join my [Discord Server](https://discord.gg/XH6pUGkwRr) for live chat and support or if you have any issues with this package.
 
 ## Source:
 *GPT-3 has internet access.*
