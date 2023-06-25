@@ -5,6 +5,18 @@ from fake_useragent import UserAgent
 class Completion:
     @staticmethod
     def create(prompt):
+        """
+        Creates a completion for a given prompt.
+
+        Args:
+            prompt (str): The text prompt to generate a completion for.
+
+        Returns:
+            str: The generated completion text.
+
+        Raises:
+            Exception: If there is an error while fetching the response.
+        """
         try:
             resp = requests.post(
                 "https://api.aichatos.cloud/api/generate",
@@ -17,9 +29,8 @@ class Completion:
                 json={
                     "prompt": f"Always reply in English, prompt: {prompt}",
                     "userId": f"#/chat/{int(time.time() * 1000)}",
-                    "withoutContext": True,
                 },
             )
             return resp.json()["result"]
         except (requests.RequestException, ValueError, KeyError):
-            raise Exception(f"Unable to fetch the response.")
+            raise Exception("Unable to fetch the response.")
