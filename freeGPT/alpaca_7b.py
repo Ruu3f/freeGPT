@@ -5,6 +5,19 @@ from fake_useragent import UserAgent
 class Completion:
     @staticmethod
     def create(prompt):
+        """
+        Create a completion using a given prompt.
+
+        Args:
+            prompt (str): The prompt for generating the completion.
+
+        Returns:
+            str: The generated completion.
+
+        Raises:
+            Exception: If there is an error while fetching the response.
+
+        """
         try:
             resp = requests.post(
                 "https://us-central1-arched-keyword-306918.cloudfunctions.net/run-inference-1",
