@@ -5,8 +5,8 @@ with open("README.md", encoding="utf-8") as f:
 
 setup(
     name="freeGPT",
-    version="1.1.9",
-    description="freeGPT is a Python package that gives access to GPT and more models for free.",
+    version="1.2.0",
+    description="freeGPT provides access to GPT and other models for free.",
     long_description=README,
     long_description_content_type="text/markdown",
     url="https://github.com/Ruu3f/freeGPT",
@@ -16,7 +16,7 @@ setup(
         "artificial-intelligence",
         "machine-learning",
         "ai-models",
-        "chatllama",
+        "chatbot",
         "gpt4free",
         "freegpt",
         "chatgpt",
@@ -24,6 +24,7 @@ setup(
         "alpaca",
         "openai",
         "model",
+        "c-a-l",
         "free",
         "gpt3",
         "gpt4",
@@ -41,6 +42,7 @@ setup(
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
         "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.11",
     ],
     packages=find_packages(),
     install_requires=[
