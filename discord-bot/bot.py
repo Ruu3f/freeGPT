@@ -1,11 +1,15 @@
 import discord, asyncio, aiosqlite
+from discord import app_commands
 from discord.ext import commands
 from freeGPT import gpt3, gpt4, alpaca_7b
 
 intents = discord.Intents.default()
 intents.message_content = True
 
-bot = commands.Bot(command_prefix="f?", intents=intents, help_command=None)
+bot = commands.Bot(
+    command_prefix="i don't want to set one :sob:", intents=intents, help_command=None
+)
+models = ["gpt3", "gpt4", "alpaca_7b"]
 
 
 @bot.event
@@ -38,67 +42,104 @@ async def on_ready():
         await asyncio.sleep(10)
 
 
-@bot.hybrid_command(name="help", description="Get help.")
-async def help(ctx):
-    embed = discord.Embed(title="Help Menu", color=0x00FFFF)
+@bot.tree.command(name="help", description="Get help.")
+async def help(interaction):
+    embed = discord.Embed(
+        title="Help Menu",
+        description=f"Available models: `{', '.join(models)}`",
+        color=0x00FFFF,
+    )
     embed.add_field(
         name="setup",
-        value="Usage:\n- `f?setup {model, gpt3, gpt4, alpaca_7b}`\n- `/setup {model, gpt3, gpt4, alpaca_7b}`",
+        value="Usage:\n- `/setup {model}`",
     )
-    embed.add_field(name="reset", value="Usage:\n- `f?reset`\n- `/reset`")
-    await ctx.send(embed=embed)
+    embed.add_field(name="reset", value="Usage:\n- `/reset`")
+    view = discord.ui.View()
+    view.add_item(
+        discord.ui.Button(
+            label="Invite me",
+            url="https://dsc.gg/freeGPT",
+        )
+    )
+    view.add_item(
+        discord.ui.Button(
+            label="Discord Server",
+            url="https://discord.gg/XH6pUGkwRr",
+        )
+    )
+    view.add_item(
+        discord.ui.Button(
+            label="Source Code",
+            url="https://github.com/Ruu3f/freeGPT",
+        )
+    )
+    await interaction.response.send_message(embed=embed, view=view)
 
 
-@bot.hybrid_command(name="setup", description="Setup the chatbot.")
-@commands.has_guild_permissions(manage_channels=True)
-@commands.bot_has_guild_permissions(manage_channels=True)
-async def setup(ctx, model: str):
+@bot.tree.command(name="setup", description="Setup the chatbot.")
+@app_commands.checks.has_permissions(manage_channels=True)
+@app_commands.checks.bot_has_permissions(manage_channels=True)
+@app_commands.describe(model=f"Model to use. Choose between {', '.join(models)}")
+async def setup(interaction, model: str):
+    if model.lower() not in models:
+        await interaction.response.send_message(
+            f"**Error:** Model not found! Please choose a model between `{', '.join(models)}`."
+        )
+        return
     db = await aiosqlite.connect("database.db")
     cursor = await db.execute(
-        "SELECT channels, model FROM datastorage WHERE guilds = ?", (ctx.guild.id,)
+        "SELECT channels, model FROM datastorage WHERE guilds = ?",
+        (interaction.guild.id,),
     )
     data = await cursor.fetchone()
     if data:
-        await ctx.send(
-            "The chatbot is already set up. Try using the `/reset` command to fix this error."
+        await interaction.response.send_message(
+            "**Error:** The chatbot is already set up. Try using the `/reset` command to fix this error."
         )
         return
 
-    if model.lower() in ["alpaca_7b", "gpt3", "gpt4"]:
-        channel = await ctx.guild.create_text_channel("freegpt", slowmode_delay=10)
+    if model.lower() in models:
+        channel = await interaction.guild.create_text_channel(
+            f"{model}-chatbot", slowmode_delay=10
+        )
         await db.execute(
             "INSERT OR REPLACE INTO datastorage (guilds, channels, model) VALUES (?, ?, ?)",
             (
-                ctx.guild.id,
+                interaction.guild.id,
                 channel.id,
                 model,
             ),
         )
         await db.commit()
-        await ctx.send(f"Successfully set the channel to {channel.mention}.")
+        await interaction.response.send_message(
+            f"**Success:** The chatbot has been set up. The channel is {channel.mention}."
+        )
     else:
-        await ctx.send(
-            "Error: Model not found! Please choose between `gpt3`, `gpt4` and `alpaca_7b`"
+        await interaction.send(
+            f"**Error:** Model not found! Please choose a model between `{', '.join(models)}`."
         )
 
 
-@bot.hybrid_command(name="reset", description="Reset the chatbot.")
-@commands.has_guild_permissions(manage_channels=True)
-async def reset(ctx):
+@bot.tree.command(name="reset", description="Reset the chatbot.")
+@app_commands.checks.has_permissions(manage_channels=True)
+async def reset(interaction):
     db = await aiosqlite.connect("database.db")
     cursor = await db.execute(
-        "SELECT channels, model FROM datastorage WHERE guilds = ?", (ctx.guild.id,)
+        "SELECT channels, model FROM datastorage WHERE guilds = ?",
+        (interaction.guild.id,),
     )
     data = await cursor.fetchone()
     if not data:
-        await ctx.send(
-            "The chatbot is not set up. Try using the `/setup` command to fix this error."
+        await interaction.response.send_message(
+            "**Error:** The chatbot is not set up. Try using the `/setup` command to fix this error."
         )
         return
 
-    await db.execute("DELETE FROM datastorage WHERE guilds = ?", (ctx.guild.id,))
+    await db.execute(
+        "DELETE FROM datastorage WHERE guilds = ?", (interaction.guild.id,)
+    )
     await db.commit()
-    await ctx.send("The chatbot has been reset.")
+    await interaction.response.send_message("**Success:** The chatbot has been reset.")
 
 
 @bot.event
