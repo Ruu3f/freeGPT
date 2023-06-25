@@ -1,9 +1,26 @@
-import json, requests
+import json
+import requests
 
 
 class Completion:
+    """
+    A class that interacts with the Ava API to generate completions for prompts.
+    """
+
     @staticmethod
     def create(prompt):
+        """
+        Generates a completion based on the given prompt.
+
+        Args:
+            prompt (str): The prompt text to generate a completion for.
+
+        Returns:
+            str: The generated completion response.
+
+        Raises:
+            Exception: If there is an error while fetching the response from the API.
+        """
         try:
             resp = ""
             with requests.post(
@@ -17,7 +34,7 @@ class Completion:
                         "messages": [
                             {
                                 "role": "system",
-                                "content": "You are Ava, an AI assistant.",
+                                "content": "You are Ava, an AI assistant. You are running on GPT-4 by OpenAI.",
                             },
                             {"role": "user", "content": prompt},
                         ],
