@@ -34,7 +34,7 @@ class Completion:
                         "messages": [
                             {
                                 "role": "system",
-                                "content": "You are Ava, an AI assistant. You are running on GPT-4 by OpenAI.",
+                                "content": "You are GPT-4 by OpenAI.",
                             },
                             {"role": "user", "content": prompt},
                         ],
