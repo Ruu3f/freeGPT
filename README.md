@@ -21,8 +21,8 @@ Join my [Discord Server](https://discord.gg/XH6pUGkwRr) for live chat and suppor
 | alpaca_7b         | [chatllama.baseten.co](https://chatllama.baseten.co/)|
 
 ## Support this repository:
-- Star this repository! :D
-- Add the [Discord Bot](https://dsc.gg/freeGPT) :D
+- Star this repository :D
+- Add the freeGPT [Discord Bot](https://dsc.gg/freeGPT).
 - Join my [Discord Server](https://discord.gg/XH6pUGkwRr):
 
 [![DiscordWidget](https://discordapp.com/api/guilds/1120833966035976273/widget.png?style=banner2)](https://discord.gg/XH6pUGkwRr)
