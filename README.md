@@ -20,20 +20,20 @@ Join my [Discord Server](https://discord.gg/XH6pUGkwRr) for live chat and suppor
 | gpt4              | [ava-ai-ef611.web.app](https://ava-ai-ef611.web.app/)|
 | alpaca_7b         | [chatllama.baseten.co](https://chatllama.baseten.co/)|
 
-### TODO-List:
-- [x] Make the library well-documented.
-- [x] Make the over-all library easier to use.
-- [x] Make the over-all library easier to understand.
-- [x] Add a non-GPT model.
-- [x] Make a discord bot.
-- [ ] Add a image generation model.
-
 ## Support this repository:
 - Star this repository! :D
 - Add the [Discord Bot](https://dsc.gg/freeGPT) :D
 - Join my [Discord Server](https://discord.gg/XH6pUGkwRr):
 
 [![DiscordWidget](https://discordapp.com/api/guilds/1120833966035976273/widget.png?style=banner2)](https://discord.gg/XH6pUGkwRr)
+
+## TODO-List:
+- [x] Make the library well-documented.
+- [x] Make the over-all library easier to use.
+- [x] Make the over-all library easier to understand.
+- [x] Add a non-GPT model.
+- [x] Make a discord bot.
+- [ ] Add a image generation model.
 
 ## Discord bot:
 - Add the official freeGPT discord bot [here](https://dsc.gg/freegpt)
