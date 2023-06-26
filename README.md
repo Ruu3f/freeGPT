@@ -13,11 +13,11 @@ py -m pip install --upgrade freeGPT
 Join my [Discord Server](https://discord.gg/XH6pUGkwRr) for live chat and support or if you have any issues with this package.
 
 ## Source:
-*GPT-3 has internet access.*
 <br>
 | Models            | Websites                                             |
 | ----------------- | -----------------------------------------------------|
-| gpt3              | [you.com](https://you.com/)                          |
+| c_a_l             | [you.com](https://you.com/)                          |
+| gpt3              | [chat9.yqcloud.top](https://chat9.yqcloud.top/)      |
 | gpt4              | [ava-ai-ef611.web.app](https://ava-ai-ef611.web.app/)|
 | alpaca_7b         | [chatllama.baseten.co](https://chatllama.baseten.co/)|
 
@@ -25,8 +25,6 @@ Join my [Discord Server](https://discord.gg/XH6pUGkwRr) for live chat and suppor
 - [x] Make the library well-documented.
 - [x] Make the over-all library easier to use.
 - [x] Make the over-all library easier to understand.
-- [x] Replace you.com with theb.ai for less failed responses.
-- [x] Make GPT-3 & GPT-4 models with web access.
 - [x] Add a non-GPT model.
 - [x] Make a discord bot.
 - [ ] Add a image generation model.
@@ -44,46 +42,19 @@ Join my [Discord Server](https://discord.gg/XH6pUGkwRr) for live chat and suppor
 - Its interactive, fast and overall easy to use.
 - And lastly its [Open Sourced](https://github.com/Ruu3f/freeGPT/tree/main/discord-bot)!
 
-## Examples:
+## Example:
 
-#### GPT-3:
 ```python
-from freeGPT import gpt3
+import freeGPT
 
 while True:
     prompt = input("👦 > ")
     try:
-        # Remove the 'proxy' variable and the 'proxies' parameter if you don't want to use a proxy.
-        proxy = "Your proxies IP"
-        resp = gpt3.Completion.create(prompt=prompt, chat=[], proxies={"https": "http://" + proxy})
-        print(f"🤖 > {str(resp['text'])}")
+        model = freeGPT.MODELNAME # Replace MODELNAME with the model you want to use.
+        resp = model.Completion.create(prompt) # Also, there are `chat` and `proxies` parameters in c_a_l.
+        print(f"🤖 > {resp}")
     except Exception as e:
-        print(f"🤖 > {str(e)}")
-```
-#### GPT-4:
-```python
-from freeGPT import gpt4
-
-while True:
-    prompt = input("👦 > ")
-    try:
-        resp = gpt4.Completion.create(prompt=prompt)
-        print(f"🤖 > {str(resp)}")
-    except Exception as e:
-        print(f"🤖 > {str(e)}")
-```
-
-#### Alpaca-7b:
-```python
-from freeGPT import alpaca_7b
-
-while True:
-    prompt = input("👦 > ")
-    try:
-        resp = alpaca_7b.Completion.create(prompt=prompt)
-        print(f"🤖 > {str(resp)}")
-    except Exception as e:
-        print(f"🤖 > {str(e)}")
+        print(f"🤖 > {e}")
 ```
 
 ## Star History:
