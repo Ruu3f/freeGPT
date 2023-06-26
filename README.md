@@ -13,9 +13,8 @@ py -m pip install --upgrade freeGPT
 Join my [Discord Server](https://discord.gg/XH6pUGkwRr) for live chat and support or if you have any issues with this package.
 
 ## Source:
-<br>
 | Models            | Websites                                             |
-| ----------------- | -----------------------------------------------------|
+| ----------------- | ---------------------------------------------------- |
 | c_a_l             | [you.com](https://you.com/)                          |
 | gpt3              | [chat9.yqcloud.top](https://chat9.yqcloud.top/)      |
 | gpt4              | [ava-ai-ef611.web.app](https://ava-ai-ef611.web.app/)|
