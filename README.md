@@ -22,7 +22,7 @@ Join my [Discord Server](https://discord.gg/XH6pUGkwRr) for live chat and suppor
 
 ## Support this repository:
 - Star this repository :D
-- Add the freeGPT [Discord Bot](https://dsc.gg/freeGPT).
+- Add the [freeGPT Discord Bot](https://dsc.gg/freeGPT).
 - Join my [Discord Server](https://discord.gg/XH6pUGkwRr):
 
 [![DiscordWidget](https://discordapp.com/api/guilds/1120833966035976273/widget.png?style=banner2)](https://discord.gg/XH6pUGkwRr)
