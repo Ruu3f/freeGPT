@@ -1,6 +1,6 @@
 import discord, asyncio, aiosqlite, freeGPT
-from discord import app_commands
 from discord.ext import commands
+from discord import app_commands
 
 intents = discord.Intents.default()
 intents.message_content = True
@@ -25,11 +25,8 @@ async def on_ready():
     )
     await db.commit()
     print(f"{bot.user.name} has connected to Discord!")
-    try:
-        commands = await bot.tree.sync()
-        print(f"Synced {len(commands)} commands.")
-    except Exception as e:
-        print(e)
+    sync_commands = await bot.tree.sync()
+    print(f"Synced {len(sync_commands)} command(s).")
     while True:
         await bot.change_presence(
             status=discord.Status.online,
@@ -114,7 +111,7 @@ async def setup(interaction, model: str):
             f"**Success:** The chatbot has been set up. The channel is {channel.mention}."
         )
     else:
-        await interaction.send(
+        await interaction.response.send_message(
             f"**Error:** Model not found! Please choose a model between `{', '.join(models)}`."
         )
 
