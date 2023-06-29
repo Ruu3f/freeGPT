@@ -52,6 +52,6 @@ setup(
     project_urls={
         "Source": "https://github.com/Ruu3f/freeGPT",
         "Issues": "https://github.com/Ruu3f/freeGPT/issues",
-        "Discord": "https://dsc.gg/ruu3fstudio",
+        "Discord": "https://discord.gg/XH6pUGkwRr",
     },
 )
