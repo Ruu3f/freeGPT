@@ -4,7 +4,7 @@
 
 # freeGPT
 
-freeGPT is a Python package that provides free access to GPT3, GPT4 and more models.
+freeGPT provides free access to GPT3, GPT4 and more models.
 
 ## Get started:
 
