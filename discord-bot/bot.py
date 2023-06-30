@@ -24,7 +24,7 @@ async def on_ready():
         """
     )
     await db.commit()
-    print(f"{bot.user.name} has connected to Discord!")
+    print(f"{bot.user.name} has connected to Discord.")
     sync_commands = await bot.tree.sync()
     print(f"Synced {len(sync_commands)} command(s).")
     while True:
@@ -35,7 +35,7 @@ async def on_ready():
                 name=f"{len(bot.guilds)} servers | /help",
             ),
         )
-        await asyncio.sleep(10)
+        await asyncio.sleep(300)
 
 
 @bot.tree.command(name="help", description="Get help.")
