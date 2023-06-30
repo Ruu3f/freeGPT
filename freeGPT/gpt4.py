@@ -1,8 +1,14 @@
-import re, json
+import re
+import json
 import subprocess
 from uuid import uuid4
 from typing import Optional, List
 from fake_useragent import UserAgent
+
+try:
+    import tls_client
+except Exception:
+    subprocess.run(["pip", "install", "tls_client", "--no-cache-dir"])
 
 
 class Completion:
@@ -49,12 +55,6 @@ class Completion:
 
         if chat is None:
             chat = []
-
-        try:
-            import tls_client
-        except ImportError:
-            subprocess.run(["pip", "install", "tls_client", "--no-cache-dir"])
-            import tls_client
 
         client = tls_client.Session(client_identifier="chrome_108")
         client.headers = {
