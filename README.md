@@ -1,6 +1,6 @@
 [![PyPI](https://img.shields.io/pypi/v/freeGPT)](https://pypi.org/project/freeGPT)
 [![Downloads](https://static.pepy.tech/badge/freeGPT)](https://pypi.org/project/freeGPT)
-[![PyVersion](https://img.shields.io/pypi/pyversions/freeGPT)](https://pypi.org/project/freeGPT)
+[[![PyVersion](https://img.shields.io/pypi/status/freeGPT)](https://pypi.org/project/freeGPT)
 
 # freeGPT
 
