@@ -3,20 +3,29 @@ from fake_useragent import UserAgent
 
 
 class Completion:
+    """
+    A class for generating text completions using an API.
+
+    Attributes:
+        None
+
+    Methods:
+        create(prompt): Generates a text completion for the given prompt using an API.
+    """
+
     @staticmethod
     def create(prompt):
         """
-        Create a completion using a given prompt.
+        Generates a text completion for the given prompt using an API.
 
         Args:
-            prompt (str): The prompt for generating the completion.
+            prompt (str): The prompt for which to generate a text completion.
 
         Returns:
-            str: The generated completion.
+            str: The generated text completion.
 
         Raises:
-            Exception: If there is an error while fetching the response.
-
+            Exception: If there is an error fetching the response from the API.
         """
         try:
             resp = requests.post(
