@@ -15,6 +15,7 @@ setup(
     keywords=[
         "artificial-intelligence",
         "machine-learning",
+        "deep-learning",
         "gpt4free",
         "chatbot",
         "freegpt",
