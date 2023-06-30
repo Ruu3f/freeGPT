@@ -20,9 +20,8 @@ Join my [Discord server](https://discord.gg/XH6pUGkwRr) for live chat, support, 
 
 | Models   | Websites                                                |
 | -------- | ------------------------------------------------------- |
-| c_a_l    | [<you.com>](https://you.com/)                           |
-| gpt3     | [<chat9.yqcloud.top>](https://chat9.yqcloud.top/)       |
-| gpt4     | [<ava-ai-ef611.web.app>](https://ava-ai-ef611.web.app/) |
+| gpt3     | [<ava-ai-ef611.web.app>](https://ava-ai-ef611.web.app/) |
+| gpt4     | [<you.com>](https://you.com/)       |
 | alpaca_7b| [<chatllama.baseten.co>](https://chatllama.baseten.co/) |
 
 ## Support this repository:
