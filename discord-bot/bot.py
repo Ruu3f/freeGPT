@@ -6,9 +6,9 @@ intents = discord.Intents.default()
 intents.message_content = True
 
 bot = commands.Bot(
-    command_prefix="i don't want to set one :sob:", intents=intents, help_command=None
+    command_prefix="i don't want to set one...", intents=intents, help_command=None
 )
-models = ["c_a_l", "gpt3", "gpt4", "alpaca_7b"]
+models = ["gpt3", "gpt4", "alpaca_7b"]
 
 
 @bot.event
@@ -140,11 +140,9 @@ async def reset(interaction):
 
 @bot.event
 async def on_message(message):
-    db = await aiosqlite.connect("database.db")
-    await bot.process_commands(message)
     if message.author == bot.user:
         return
-
+    db = await aiosqlite.connect("database.db")
     cursor = await db.execute(
         "SELECT channels, model FROM datastorage WHERE guilds = ?", (message.guild.id,)
     )
@@ -155,16 +153,9 @@ async def on_message(message):
             await message.channel.edit(slowmode_delay=10)
             async with message.channel.typing():
                 try:
-                    if model.lower() == "c_a_l":
-                        resp = freeGPT.c_a_l.Completion.create(prompt=message.content)
-                    elif model.lower() == "gpt3":
-                        resp = freeGPT.gpt3.Completion.create(prompt=message.content)
-                    elif model.lower() == "gpt4":
-                        resp = freeGPT.gpt4.Completion.create(prompt=message.content)
-                    elif model.lower() == "alpaca_7b":
-                        resp = freeGPT.alpaca_7b.Completion.create(
-                            prompt=message.content
-                        )
+                    resp = getattr(freeGPT, model.lower()).Completion.create(
+                        prompt=message.content
+                    )
                     await message.channel.send(resp)
                 except Exception as e:
                     await message.channel.send(e)
