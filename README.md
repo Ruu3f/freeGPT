@@ -1,6 +1,6 @@
-[![PyPI version](https://badge.fury.io/py/freeGPT.svg)](https://badge.fury.io/py/freeGPT)
-[![Downloads](https://static.pepy.tech/personalized-badge/freeGPT?period=month&units=international_system&left_color=grey&right_color=brightgreen&left_text=Downloads)](https://pepy.tech/project/freeGPT)
-[![License](https://img.shields.io/badge/License-GPLv3-bright%20green.svg)](LICENSE)
+[![PyPI](https://img.shields.io/pypi/v/freeGPT)](https://pypi.org/project/freeGPT)
+[![Downloads](https://static.pepy.tech/badge/freeGPT)](https://pypi.org/project/freeGPT)
+[![PyVersion](https://img.shields.io/badge/License-GPLv3-bright%20green.svg)](LICENSE)](https://pypi.org/project/freeGPT)
 
 # freeGPT
 
