@@ -21,7 +21,7 @@ Join my [Discord server](https://discord.gg/XH6pUGkwRr) for live chat, support, 
 | Models   | Websites                                                |
 | -------- | ------------------------------------------------------- |
 | gpt3     | [<ava-ai-ef611.web.app>](https://ava-ai-ef611.web.app/) |
-| gpt4     | [<you.com>](https://you.com/)       |
+| gpt4     | [<you.com>](https://you.com/)                           |
 | alpaca_7b| [<chatllama.baseten.co>](https://chatllama.baseten.co/) |
 
 ## Support this repository:
@@ -52,15 +52,20 @@ Join my [Discord server](https://discord.gg/XH6pUGkwRr) for live chat, support, 
 
 ```python
 import freeGPT
+import asyncio
 
-while True:
-    prompt = input("👦: ")
-    try:
-        model = getattr(freeGPT, "Model Name here.")
-        resp = model.Completion.create(prompt)
-        print(f"🤖: {resp}")
-    except Exception as e:
-        print(f"🤖: {e}")
+
+async def main():
+    while True:
+        prompt = input("👦: ")
+        try:
+            resp = await getattr(freeGPT, "MODEL NAME").Completion.create(prompt)
+            print(f"🤖: {resp}")
+        except Exception as e:
+            print(f"🤖: {e}")
+
+
+asyncio.run(main())
 ```
 
 ## Star History Chart:
