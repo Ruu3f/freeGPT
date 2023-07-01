@@ -12,8 +12,7 @@ except Exception:
 
 
 class Completion:
-    @staticmethod
-    def create(
+    async def create(
         prompt,
         page: int = 1,
         count: int = 10,
@@ -109,16 +108,16 @@ class Completion:
             "youChatSerpResults": json.loads(you_chat_serp_results),
         }
 
-        result = {
+        resp = {
             "text": text.replace("\\n", "\n").replace("\\\\", "\\").replace('\\"', '"')
         }
 
         if include_links:
-            result["links"] = json.loads(third_party_search_results)["search"][
+            resp["links"] = json.loads(third_party_search_results)["search"][
                 "third_party_search_results"
             ]
 
         if detailed:
-            result["extra"] = extra
+            resp["extra"] = extra
 
-        return result["text"]
+        return resp["text"]
