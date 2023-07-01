@@ -31,13 +31,13 @@ class Completion:
                     ],
                 },
             )
-        except:
+        except Exception:
             raise Exception("Unable to fetch the response.")
         resp = ""
         for line in resp_obj.iter_lines():
             line_text = line.decode("utf-8").strip()
             if line_text.startswith("data:"):
-                data = line_text[len("data:") :]
+                data = line_text.split("data:")[1]
                 try:
                     data_json = json.loads(data)
                     if "choices" in data_json:
