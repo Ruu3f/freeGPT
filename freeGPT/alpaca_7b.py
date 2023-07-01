@@ -13,8 +13,7 @@ class Completion:
         create(prompt): Generates a text completion for the given prompt using an API.
     """
 
-    @staticmethod
-    def create(prompt):
+    async def create(prompt):
         """
         Generates a text completion for the given prompt using an API.
 
