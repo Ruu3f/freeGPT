@@ -43,7 +43,7 @@ setup(
         "Programming Language :: Python :: Implementation :: CPython",
         "Programming Language :: Python :: Implementation :: PyPy",
     ],
-    packages=find_packages(),
+    packages=find_packages(exclude=["discord-bot", ".github"]),
     install_requires=[
         "requests",
         "fake-useragent",
