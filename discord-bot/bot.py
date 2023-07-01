@@ -153,7 +153,7 @@ async def on_message(message):
             await message.channel.edit(slowmode_delay=10)
             async with message.channel.typing():
                 try:
-                    resp = getattr(freeGPT, model.lower()).Completion.create(
+                    resp = await getattr(freeGPT, model.lower()).Completion.create(
                         prompt=message.content
                     )
                     await message.channel.send(resp)
