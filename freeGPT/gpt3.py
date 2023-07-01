@@ -3,8 +3,7 @@ import requests
 
 
 class Completion:
-    @staticmethod
-    def create(prompt):
+    async def create(prompt):
         """
         Create a new completion based on the given prompt.
 
