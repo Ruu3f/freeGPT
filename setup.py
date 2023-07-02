@@ -17,6 +17,7 @@ setup(
         "machine-learning",
         "deep-learning",
         "gpt4free",
+        "gpt4all",
         "chatbot",
         "freegpt",
         "chatgpt",
