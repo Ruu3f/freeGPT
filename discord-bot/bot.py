@@ -156,9 +156,9 @@ async def on_message(message):
                     resp = await getattr(freeGPT, model.lower()).Completion.create(
                         prompt=message.content
                     )
-                    await message.channel.send(resp)
+                    await message.reply(resp)
                 except Exception as e:
-                    await message.channel.send(e)
+                    await message.reply(e)
 
 
 TOKEN = ""
