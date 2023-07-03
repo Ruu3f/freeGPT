@@ -12,7 +12,7 @@ freeGPT provides free access to GPT3, GPT4 and more models.
 py -m pip install --upgrade freeGPT
 ```
 
-**Or add the [freeGPT Discord bot](https://dsc.gg/freegpt), it's [open-sourced](https://github.com/Ruu3f/freeGPT/tree/main/discord-bot)!**
+**Or add the [freeGPT Discord bot](https://dsc.gg/freegpt), it's [open-sourced](https://github.com/Ruu3f/freeGPT-discord-bot)!**
 
 Join my [Discord server](https://discord.gg/XH6pUGkwRr) for live chat, support, or if you have any issues with this package.
 
@@ -27,7 +27,7 @@ Join my [Discord server](https://discord.gg/XH6pUGkwRr) for live chat, support, 
 ## Support this repository:
 
 - Star this repository :D
-- Add the [freeGPT Discord bot](https://dsc.gg/freeGPT).
+- Add the [freeGPT Discord bot](https://dsc.gg/freegpt).
 - Join my [Discord Server](https://discord.gg/XH6pUGkwRr):
 
 [![DiscordWidget](https://discordapp.com/api/guilds/1120833966035976273/widget.png?style=banner2)](https://discord.gg/XH6pUGkwRr)
@@ -46,7 +46,7 @@ Join my [Discord server](https://discord.gg/XH6pUGkwRr) for live chat, support, 
 - Add the [freeGPT Discord bot](https://dsc.gg/freegpt).
 - This bot has all the models in this repository available.
 - It's interactive, overall fast, and easy to use.
-- And lastly, it's [open-sourced](https://github.com/Ruu3f/freeGPT/tree/main/discord-bot).
+- And lastly, it's [open-sourced](https://github.com/Ruu3f/freeGPT-discord-bot).
 
 ## Example:
 
