@@ -1,3 +1,0 @@
-discord.py==2.3.0
-aiosqlite==0.19.0
-freeGPT==1.2.2
