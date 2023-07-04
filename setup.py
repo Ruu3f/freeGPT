@@ -25,8 +25,6 @@ setup(
         "openai",
         "llama",
         "free",
-        "gpt4",
-        "gpt3",
         "gpt",
         "ai",
     ],
