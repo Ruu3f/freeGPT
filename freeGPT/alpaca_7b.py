@@ -1,4 +1,4 @@
-import requests
+from requests import post, exceptions
 from fake_useragent import UserAgent
 
 
@@ -27,7 +27,7 @@ class Completion:
             Exception: If there is an error fetching the response from the API.
         """
         try:
-            resp = requests.post(
+            resp = post(
                 "https://us-central1-arched-keyword-306918.cloudfunctions.net/run-inference-1",
                 headers={
                     "Origin": "https://chatllama.baseten.co",
@@ -46,8 +46,9 @@ class Completion:
                     "User-Agent": UserAgent().random,
                 },
                 json={"prompt": prompt},
+                timeout=30,
             ).json()
-        except requests.exceptions.RequestException:
+        except exceptions.RequestException:
             raise Exception("Unable to fetch the response.")
 
         return resp["completion"]
