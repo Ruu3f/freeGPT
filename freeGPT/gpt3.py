@@ -1,8 +1,12 @@
-import json
-import requests
+from json import loads, JSONDecodeError
+from requests import post
 
 
 class Completion:
+    """
+    This class provides methods for generating completions based on prompts.
+    """
+
     async def create(prompt):
         """
         Create a new completion based on the given prompt.
@@ -17,8 +21,7 @@ class Completion:
             Exception: If unable to fetch the response.
         """
         try:
-            session = requests.Session()
-            resp_obj = session.post(
+            resp_obj = post(
                 "https://ava-alpha-api.codelink.io/api/chat",
                 headers={"Content-Type": "application/json"},
                 json={
@@ -30,16 +33,18 @@ class Completion:
                         {"role": "user", "content": prompt},
                     ],
                 },
+                timeout=30,
             )
-        except Exception:
+        except:
             raise Exception("Unable to fetch the response.")
+
         resp = ""
         for line in resp_obj.iter_lines():
             line_text = line.decode("utf-8").strip()
             if line_text.startswith("data:"):
                 data = line_text.split("data:")[1]
                 try:
-                    data_json = json.loads(data)
+                    data_json = loads(data)
                     if "choices" in data_json:
                         choices = data_json["choices"]
                         for choice in choices:
@@ -50,6 +55,6 @@ class Completion:
                                 break
                             if "delta" in choice and "content" in choice["delta"]:
                                 resp += choice["delta"]["content"]
-                except json.JSONDecodeError:
+                except JSONDecodeError:
                     pass
         return resp
