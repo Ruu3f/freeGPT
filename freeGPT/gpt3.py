@@ -1,5 +1,5 @@
 from json import loads, JSONDecodeError
-from requests import post
+from requests import post, exceptions
 
 
 class Completion:
@@ -35,7 +35,7 @@ class Completion:
                 },
                 timeout=30,
             )
-        except:
+        except exceptions.RequestException:
             raise Exception("Unable to fetch the response.")
 
         resp = ""
