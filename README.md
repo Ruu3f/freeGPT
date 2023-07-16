@@ -40,7 +40,7 @@ Join my [Discord server](https://discord.gg/XH6pUGkwRr) for live chat, support, 
 - [x] Add a non-GPT model.
 - [x] Make a discord bot.
 - [x] Make a ChatUI.
-- [ ] Add an image generation model.
+- [x] Add an image generation model.
 
 ## Discord bot:
 
