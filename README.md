@@ -9,7 +9,7 @@ freeGPT provides free access to GPT3, GPT4 and more models.
 ## Get started:
 
 ```
-py -m pip install --upgrade freeGPT
+python -m pip install --upgrade freeGPT
 ```
 
 **Or add the [freeGPT Discord bot](https://dsc.gg/freegpt), it's [open-sourced](https://github.com/Ruu3f/freeGPT-discord-bot)!**
