@@ -23,6 +23,8 @@ Join my [Discord server](https://discord.gg/XH6pUGkwRr) for live chat, support, 
 | gpt3     | [<ava-ai-ef611.web.app>](https://ava-ai-ef611.web.app/) |
 | gpt4     | [<you.com>](https://you.com/)                           |
 | alpaca_7b| [<chatllama.baseten.co>](https://chatllama.baseten.co/) |
+| prodia   | [<prodia.com>](https://prodia.com/)                     |
+
 
 ## Support this repository:
 
