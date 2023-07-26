@@ -5,7 +5,7 @@ with open("README.md", encoding="utf-8") as f:
 
 setup(
     name="freeGPT",
-    version="1.2.4",
+    version="1.2.5",
     description="freeGPT provides free access to GPT3, GPT4 and more models.",
     long_description=README,
     long_description_content_type="text/markdown",
@@ -46,7 +46,7 @@ setup(
     packages=find_packages(exclude=[".github"]),
     install_requires=[
         "requests",
-        "fake-useragent",
+        "aiohttp",
     ],
     project_urls={
         "Source": "https://github.com/Ruu3f/freeGPT",
