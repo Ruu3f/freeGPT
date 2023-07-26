@@ -1,5 +1,4 @@
 from requests import post, exceptions
-from fake_useragent import UserAgent
 
 
 class Completion:
@@ -43,7 +42,7 @@ class Completion:
                     "Sec-Fetch-Dest": "empty",
                     "Sec-Fetch-Mode": "cors",
                     "Sec-Fetch-Site": "cross-site",
-                    "User-Agent": UserAgent().random,
+                    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.79 Safari/537.36",
                 },
                 json={"prompt": prompt},
                 timeout=30,
