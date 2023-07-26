@@ -20,12 +20,13 @@ Join my [Discord server](https://discord.gg/XH6pUGkwRr) for live chat, support, 
 
 ## Source:
 
-| Models   | Websites                                                |
-| -------- | ------------------------------------------------------- |
-| gpt3     | [<ava-ai-ef611.web.app>](https://ava-ai-ef611.web.app/) |
-| gpt4     | [<you.com>](https://you.com/)                           |
-| alpaca_7b| [<chatllama.baseten.co>](https://chatllama.baseten.co/) |
-| prodia   | [<prodia.com>](https://prodia.com/)                     |
+| Models       | Websites                                                |
+| ------------ | ------------------------------------------------------- |
+| gpt3         | [<ava-ai-ef611.web.app>](https://ava-ai-ef611.web.app/) |
+| gpt4         | [<you.com>](https://you.com/)                           |
+| alpaca_7b    | [<chatllama.baseten.co>](https://chatllama.baseten.co/) |
+| prodia       | [<prodia.com>](https://prodia.com/)                     |
+| pollinations | [<pollinations.ai>](https://pollinations.ai/)           |
 
 
 ## Support this repository:
@@ -58,7 +59,7 @@ Join my [Discord server](https://discord.gg/XH6pUGkwRr) for live chat, support, 
 **Text Completion:**
 ```python
 import freeGPT
-import asyncio
+from asyncio import run
 
 
 async def main():
@@ -71,14 +72,15 @@ async def main():
             print(f"🤖: {e}")
 
 
-asyncio.run(main())
+run(main())
 ```
 
 **Image Generation:**
 ```python
 import freeGPT
-import asyncio
 from PIL import Image
+from io import BytesIO
+from asyncio import run
 
 
 async def main():
@@ -86,13 +88,13 @@ async def main():
         prompt = input("👦: ")
         try:
             resp = await getattr(freeGPT, "MODEL NAME").Generation.create(prompt)
-            Image.open(resp).show()
+            Image.open(BytesIO(resp)).show()
             print(f"🤖: Image shown.")
         except Exception as e:
             print(f"🤖: {e}")
 
 
-asyncio.run(main())
+run(main())
 ```
 
 ## Star History Chart:
