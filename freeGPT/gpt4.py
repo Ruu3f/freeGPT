@@ -3,7 +3,6 @@ import json
 import subprocess
 from uuid import uuid4
 from typing import Optional, List
-from fake_useragent import UserAgent
 
 try:
     import tls_client
@@ -69,7 +68,7 @@ class Completion:
             "sec-fetch-mode": "cors",
             "sec-fetch-site": "same-origin",
             "cookie": f"safesearch_guest=Off; uuid_guest={str(uuid4())}",
-            "user-agent": UserAgent().random,
+            "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.79 Safari/537.36",
         }
         client.proxies = proxies
 
