@@ -1,4 +1,4 @@
-#### Sorry, The freeGPT bot is in 100 servers and I can't verify it ATM. Please join my [Discord server](https://discord.gg/XH6pUGkwRr) if you wish to use it.
+##### The freeGPT bot has been verified, invite it [here](https://dsc.gg/freegpt)!
 
 [![PyPI](https://img.shields.io/pypi/v/freeGPT)](https://pypi.org/project/freeGPT)
 [![Downloads](https://static.pepy.tech/badge/freeGPT)](https://pypi.org/project/freeGPT)
