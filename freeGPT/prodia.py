@@ -40,24 +40,26 @@ class Generation:
             "sec-gpc": "1",
             "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.79 Safari/537.36",
         }
-
-        async with ClientSession() as session:
-            async with session.get(
-                "https://api.prodia.com/generate",
-                params=params,
-                headers=headers,
-                timeout=45,
-            ) as resp:
-                data = await resp.json()
-                job_id = data["job"]
-                while True:
-                    async with session.get(
-                        f"https://api.prodia.com/job/{job_id}", headers=headers
-                    ) as resp:
-                        json = await resp.json()
-                        if json["status"] == "succeeded":
-                            async with session.get(
-                                f"https://images.prodia.xyz/{job_id}.png?download=1",
-                                headers=headers,
-                            ) as resp:
-                                return await resp.content.read()
+        try:
+            async with ClientSession() as session:
+                async with session.get(
+                    "https://api.prodia.com/generate",
+                    params=params,
+                    headers=headers,
+                    timeout=45,
+                ) as resp:
+                    data = await resp.json()
+                    job_id = data["job"]
+                    while True:
+                        async with session.get(
+                            f"https://api.prodia.com/job/{job_id}", headers=headers
+                        ) as resp:
+                            json = await resp.json()
+                            if json["status"] == "succeeded":
+                                async with session.get(
+                                    f"https://images.prodia.xyz/{job_id}.png?download=1",
+                                    headers=headers,
+                                ) as resp:
+                                    return await resp.content.read()
+        except Exception:
+            raise Exception("Unable to fetch the response.")
