@@ -1,12 +1,12 @@
-import re
-import subprocess
 from uuid import uuid4
+from re import findall
 from typing import Optional
+from subprocess import check_call
 
 try:
     import tls_client
 except Exception:
-    subprocess.run(["pip", "install", "tls_client", "--no-cache-dir"])
+    check_call(["pip", "install", "tls_client", "--no-cache-dir"])
 
 
 class Completion:
@@ -60,7 +60,7 @@ class Completion:
         if "youChatToken" not in resp.text:
             raise Exception("Unable to fetch response.")
         return (
-            "".join(re.findall(r"{\"youChatToken\": \"(.*?)\"}", resp.text))
+            "".join(findall(r"{\"youChatToken\": \"(.*?)\"}", resp.text))
             .replace("\\n", "\n")
             .replace("\\\\", "\\")
             .replace('\\"', '"')
