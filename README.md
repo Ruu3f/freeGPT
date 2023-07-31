@@ -1,5 +1,3 @@
-##### The freeGPT bot has been verified, invite it [here](https://dsc.gg/freegpt)!
-
 [![PyPI](https://img.shields.io/pypi/v/freeGPT)](https://pypi.org/project/freeGPT)
 [![Downloads](https://static.pepy.tech/badge/freeGPT)](https://pypi.org/project/freeGPT)
 [![Status](https://img.shields.io/pypi/status/freeGPT)](https://pypi.org/project/freeGPT)
@@ -30,10 +28,9 @@ Join my [Discord server](https://discord.gg/XH6pUGkwRr) for live chat, support, 
 
 
 ## Support this repository:
-
-- Star this repository :D
-- Add the [freeGPT Discord bot](https://dsc.gg/freegpt).
-- Join my [Discord Server](https://discord.gg/XH6pUGkwRr):
+- ⭐ **Star the project:** Star this and the [freeGPT repository](https://github.com/Ruu3f/freeGPT). It means a lot to me! 💕
+- 🤖 **Add the freeGPT Discord bot:** Use the freeGPT bot by adding it to your Discord servers.
+- 🎉 **Join our Discord Server:** Try the bot and chat with others. [Join here](https://discord.gg/XH6pUGkwRr):
 
 [![DiscordWidget](https://discordapp.com/api/guilds/1120833966035976273/widget.png?style=banner2)](https://discord.gg/XH6pUGkwRr)
 
