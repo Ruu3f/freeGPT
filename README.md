@@ -28,7 +28,7 @@ Join my [Discord server](https://discord.gg/XH6pUGkwRr) for live chat, support, 
 
 
 ## Support this repository:
-- ⭐ **Star the project:** Star this and the [freeGPT repository](https://github.com/Ruu3f/freeGPT). It means a lot to me! 💕
+- ⭐ **Star the project:** Star this and the [freeGPT-discord-bot repository](https://github.com/Ruu3f/freeGPT-discord-bot). It means a lot to me! 💕
 - 🤖 **Add the freeGPT Discord bot:** Use the freeGPT bot by adding it to your Discord servers.
 - 🎉 **Join our Discord Server:** Try the bot and chat with others. [Join here](https://discord.gg/XH6pUGkwRr):
 
