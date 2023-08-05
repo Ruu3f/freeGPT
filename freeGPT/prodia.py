@@ -1,9 +1,9 @@
 from random import randint
-from aiohttp import ClientSession
+from aiohttp import ClientSession, ClientError
 
 
 class Generation:
-    async def create(prompt):
+    async def create(self, prompt):
         """
         Create a new image generation based on the given prompt.
 
@@ -46,7 +46,7 @@ class Generation:
                     "https://api.prodia.com/generate",
                     params=params,
                     headers=headers,
-                    timeout=45,
+                    timeout=30,
                 ) as resp:
                     data = await resp.json()
                     job_id = data["job"]
@@ -61,5 +61,5 @@ class Generation:
                                     headers=headers,
                                 ) as resp:
                                     return await resp.content.read()
-        except Exception:
+        except ClientError:
             raise Exception("Unable to fetch the response.")
