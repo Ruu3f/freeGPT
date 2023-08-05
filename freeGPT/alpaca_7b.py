@@ -1,4 +1,5 @@
-from requests import post, exceptions
+from requests import post
+from requests.exceptions import RequestException
 
 
 class Completion:
@@ -12,7 +13,7 @@ class Completion:
         create(prompt): Generates a text completion for the given prompt using an API.
     """
 
-    async def create(prompt):
+    async def create(self, prompt):
         """
         Generates a text completion for the given prompt using an API.
 
@@ -47,7 +48,7 @@ class Completion:
                 json={"prompt": prompt},
                 timeout=30,
             ).json()
-        except exceptions.RequestException:
+        except RequestException:
             raise Exception("Unable to fetch the response.")
 
         return resp["completion"]
