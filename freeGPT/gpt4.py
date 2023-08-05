@@ -1,19 +1,15 @@
 from uuid import uuid4
 from re import findall
-from typing import Optional
 from subprocess import check_call
 
 try:
     import tls_client
-except Exception:
+except ModuleNotFoundError:
     check_call(["pip", "install", "tls_client", "--no-cache-dir"])
 
 
 class Completion:
-    async def create(
-        prompt: str,
-        proxy: Optional[str] = None,
-    ) -> str:
+    async def create(self, prompt):
         """
         Create a completion for the given prompt using the you.com API.
 
@@ -43,7 +39,6 @@ class Completion:
             "cookie": f"safesearch_guest=Off; uuid_guest={str(uuid4())}",
             "user-agent": "Mozilla/5.0 (Windows NT 5.1; U;  ; rv:1.8.1) Gecko/20061208 Firefox/2.0.0 Opera 9.52",
         }
-        client.proxies = proxy
         params = {
             "q": prompt,
             "page": 1,
@@ -56,7 +51,9 @@ class Completion:
             "queryTraceId": str(uuid4()),
             "chat": [],
         }
-        resp = client.get("https://you.com/api/streamingSearch", params=params)
+        resp = client.get(
+            "https://you.com/api/streamingSearch", params=params, timeout_seconds=30
+        )
         if "youChatToken" not in resp.text:
             raise Exception("Unable to fetch response.")
         return (
