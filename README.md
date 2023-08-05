@@ -34,9 +34,9 @@ Join my [Discord server](https://discord.gg/XH6pUGkwRr) for live chat, support, 
 
 ## Support this repository:
 - ⭐ **Star the project:** Star this and the [freeGPT-discord-bot repository](https://github.com/Ruu3f/freeGPT-discord-bot). It means a lot to me! 💕
-- 🎉 **Join my Discord Server:** Try the bot and chat with others. [Join here](https://discord.gg/XH6pUGkwRr):
+- 🎉 **Join my Discord Server:** Try the bot and chat with others. [Join here](https://discord.com/invite/UxJZMUqbsb):
 
-[![DiscordWidget](https://discordapp.com/api/guilds/1120833966035976273/widget.png?style=banner2)](https://discord.gg/XH6pUGkwRr)
+[![DiscordWidget](https://discordapp.com/api/guilds/1120833966035976273/widget.png?style=banner2)](https://discord.com/invite/UxJZMUqbsb)
 
 ## TODO List:
 
