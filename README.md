@@ -4,7 +4,7 @@
 
 # freeGPT
 
-freeGPT provides free access to GPT3, GPT4 and more models.
+freeGPT provides free access to GPT3, GPT4, and more models.
 
 ## Get started:
 
@@ -18,13 +18,18 @@ Join my [Discord server](https://discord.gg/XH6pUGkwRr) for live chat, support, 
 
 ## Source:
 
-| Models       | Websites                                                |
-| ------------ | ------------------------------------------------------- |
-| gpt3         | [<ava-ai-ef611.web.app>](https://ava-ai-ef611.web.app/) |
-| gpt4         | [<you.com>](https://you.com/)                           |
-| alpaca_7b    | [<chatllama.baseten.co>](https://chatllama.baseten.co/) |
-| prodia       | [<prodia.com>](https://prodia.com/)                     |
-| pollinations | [<pollinations.ai>](https://pollinations.ai/)           |
+### Text Generation:
+| Model     | Website                                               |
+| --------- | ----------------------------------------------------- |
+| gpt3      | [ava-ai-ef611.web.app](https://ava-ai-ef611.web.app/) |
+| gpt4      | [you.com](https://you.com/)                           |
+| alpaca_7b | [chatllama.baseten.co](https://chatllama.baseten.co/) |
+
+### Image Generation:
+| Model        | Website                                     |
+| ------------ | ------------------------------------------- |
+| prodia       | [prodia.com](https://prodia.com/)           |
+| pollinations | [pollinations.ai](https://pollinations.ai/) |
 
 
 ## Support this repository:
@@ -62,7 +67,7 @@ async def main():
     while True:
         prompt = input("👦: ")
         try:
-            resp = await getattr(freeGPT, "MODEL NAME").Completion.create(prompt)
+            resp = await getattr(freeGPT, "MODEL NAME").Completion().create(prompt)
             print(f"🤖: {resp}")
         except Exception as e:
             print(f"🤖: {e}")
@@ -83,7 +88,7 @@ async def main():
     while True:
         prompt = input("👦: ")
         try:
-            resp = await getattr(freeGPT, "MODEL NAME").Generation.create(prompt)
+            resp = await getattr(freeGPT, "MODEL NAME").Generation().create(prompt)
             Image.open(BytesIO(resp)).show()
             print(f"🤖: Image shown.")
         except Exception as e:
