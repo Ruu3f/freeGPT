@@ -7,8 +7,7 @@ class Completion:
     This class provides methods for generating completions based on prompts.
     """
 
-    @classmethod
-    async def create(cls, prompt):
+    async def create(self, prompt):
         """
         Create a new completion based on the given prompt.
 
@@ -63,5 +62,5 @@ class Completion:
                             except JSONDecodeError:
                                 pass
                     return resp
-        except ClientError:
+        except:
             raise Exception("Unable to fetch the response.")
