@@ -1,9 +1,9 @@
 from random import randint
-from aiohttp import ClientSession
+from aiohttp import ClientSession, ClientError
 
 
 class Generation:
-    async def create(prompt):
+    async def create(self, prompt):
         """
         Create a new image generation based on the given prompt.
 
@@ -17,8 +17,8 @@ class Generation:
             async with ClientSession() as session:
                 async with session.get(
                     url=f"https://image.pollinations.ai/prompt/{prompt}{randint(1, 10000)}",
-                    timeout=45,
+                    timeout=30,
                 ) as resp:
                     return await resp.content.read()
-        except Exception:
+        except ClientError:
             raise Exception("Unable to fetch the response.")
