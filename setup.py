@@ -2,7 +2,6 @@ from setuptools import setup, find_packages
 
 with open("README.md", encoding="utf-8") as f:
     README = f.read()
-
 setup(
     name="freeGPT",
     version="1.2.7",
@@ -50,6 +49,5 @@ setup(
     ],
     project_urls={
         "Source": "https://github.com/Ruu3f/freeGPT",
-        "Discord": "https://discord.gg/XH6pUGkwRr",
     },
 )
