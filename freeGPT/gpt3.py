@@ -1,5 +1,9 @@
-from aiohttp import ClientSession, ClientError
+"""
+freeGPT's gpt3 module
+"""
+
 from json import loads, JSONDecodeError
+from aiohttp import ClientSession, ClientError
 
 
 class Completion:
@@ -62,5 +66,5 @@ class Completion:
                             except JSONDecodeError:
                                 pass
                     return resp
-        except:
-            raise Exception("Unable to fetch the response.")
+        except ClientError as exc:
+            raise ClientError("Unable to fetch the response.") from exc
