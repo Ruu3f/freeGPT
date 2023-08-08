@@ -1,3 +1,7 @@
+"""
+freeGPT's gpt4 module
+"""
+
 from uuid import uuid4
 from re import findall
 from subprocess import check_call
@@ -9,19 +13,22 @@ except ModuleNotFoundError:
 
 
 class Completion:
+    """
+    This class provides methods for generating completions based on prompts.
+    """
+
     async def create(self, prompt):
         """
-        Create a completion for the given prompt using the you.com API.
+        Create a new completion session.
 
         Args:
-            prompt (str): The prompt for which completion is requested.
-            proxy (str, optional): The proxy to be used for the API request. Defaults to None.
+            prompt (str): The input prompt for generating text.
 
         Returns:
-            str: The completion result as a string.
+            str: Generated text based on the provided prompt.
 
         Raises:
-            Exception: If unable to fetch the response or the required token from the response.
+            Exception: If unable to fetch a valid response.
         """
         client = tls_client.Session(client_identifier="chrome_108")
         client.headers = {
