@@ -1,16 +1,14 @@
+"""
+freeGPT's alpaca_7b module
+"""
+
 from requests import post
 from requests.exceptions import RequestException
 
 
 class Completion:
     """
-    A class for generating text completions using an API.
-
-    Attributes:
-        None
-
-    Methods:
-        create(prompt): Generates a text completion for the given prompt using an API.
+    This class provides methods for generating completions based on prompts.
     """
 
     async def create(self, prompt):
