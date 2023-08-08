@@ -1,8 +1,16 @@
+"""
+freeGPT's prodia module
+"""
+
 from random import randint
 from aiohttp import ClientSession, ClientError
 
 
 class Generation:
+    """
+    This class provides methods for generating images based on prompts.
+    """
+
     async def create(self, prompt):
         """
         Create a new image generation based on the given prompt.
@@ -61,5 +69,5 @@ class Generation:
                                     headers=headers,
                                 ) as resp:
                                     return await resp.content.read()
-        except ClientError:
-            raise Exception("Unable to fetch the response.")
+        except ClientError as exc:
+            raise ClientError("Unable to fetch the response.") from exc
