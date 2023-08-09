@@ -12,8 +12,6 @@ freeGPT provides free access to GPT3, GPT4, and more models.
 python -m pip install -U freeGPT
 ```
 
-**Or add the [freeGPT Discord bot](https://dsc.gg/freegpt), it's [open-sourced](https://github.com/Ruu3f/freeGPT-discord-bot)!**
-
 Join my [Discord server](https://discord.com/invite/UxJZMUqbsb) for live chat, support, or if you have any issues with this package.
 
 ## Source:
@@ -33,7 +31,7 @@ Join my [Discord server](https://discord.com/invite/UxJZMUqbsb) for live chat, s
 
 
 ## Support this repository:
-- ⭐ **Star the project:** Star this and the [freeGPT-discord-bot repository](https://github.com/Ruu3f/freeGPT-discord-bot). It means a lot to me! 💕
+- ⭐ **Star the project:** Star this and the [freeGPT-discord repository](https://github.com/Ruu3f/freeGPT-discord). It means a lot to me! 💕
 - 🎉 **Join my Discord Server:** Try the bot and chat with others. [Join here](https://discord.com/invite/UxJZMUqbsb):
 
 [![DiscordWidget](https://discordapp.com/api/guilds/1137347499414278204/widget.png?style=banner2)](https://discord.gg/XH6pUGkwRr)
