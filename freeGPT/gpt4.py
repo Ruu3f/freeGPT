@@ -2,14 +2,14 @@
 freeGPT's gpt4 module
 """
 
+from os import system
 from uuid import uuid4
 from re import findall
-from subprocess import check_call
 
 try:
     import tls_client
 except ModuleNotFoundError:
-    check_call(["pip", "install", "tls_client", "--no-cache-dir"])
+    system("pip install tls_client --no-cache-dir")
 
 
 class Completion:
