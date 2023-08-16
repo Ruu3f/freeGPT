@@ -17,11 +17,12 @@ Join my [Discord server](https://dsc.gg/devhub-rsgh) for live chat, support, or 
 ## Source:
 
 ### Text Generation:
-| Model     | Website                                               |
-| --------- | ----------------------------------------------------- |
-| gpt3      | [ava-ai-ef611.web.app](https://ava-ai-ef611.web.app/) |
-| gpt4      | [you.com](https://you.com/)                           |
-| alpaca_7b | [chatllama.baseten.co](https://chatllama.baseten.co/) |
+| Model      | Website                                               |
+| ---------- | ----------------------------------------------------- |
+| gpt3       | [ava-ai-ef611.web.app](https://ava-ai-ef611.web.app/) |
+| gpt4       | [you.com](https://you.com/)                           |
+| alpaca_7b  | [chatllama.baseten.co](https://chatllama.baseten.co/) |
+| falcon_40b | [gpt-gm.h2o.ai](https://gpt-gm.h2o.ai) |
 
 ### Image Generation:
 | Model        | Website                                     |
