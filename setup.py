@@ -4,13 +4,13 @@ with open("README.md", encoding="utf-8") as f:
     README = f.read()
 setup(
     name="freeGPT",
-    version="1.2.7",
+    version="1.2.8",
     description="freeGPT provides free access to text and image generation models.",
     long_description=README,
     long_description_content_type="text/markdown",
     url="https://github.com/Ruu3f/freeGPT",
     author="Ruu3f",
-    license="GPLv2",
+    license="GPLv3",
     keywords=[
         "natural-language-processing",
         "artificial-intelligence",
