@@ -4,9 +4,9 @@
 
 # freeGPT
 
-freeGPT provides free access to GPT3, GPT4, and more models.
+freeGPT provides free access to text and image generation models.
 
-## Get started:
+## Getting Started:
 
 ```
 python -m pip install -U freeGPT
@@ -14,7 +14,7 @@ python -m pip install -U freeGPT
 
 Join my [Discord server](https://dsc.gg/devhub-rsgh) for live chat, support, or if you have any issues with this package.
 
-## Source:
+## Sources:
 
 ### Text Generation:
 | Model      | Website                                               |
@@ -33,7 +33,7 @@ Join my [Discord server](https://dsc.gg/devhub-rsgh) for live chat, support, or 
 
 ## Support this repository:
 - ⭐ **Star the project:** Star this and the [freeGPT-discord repository](https://github.com/Ruu3f/freeGPT-discord). It means a lot to me! 💕
-- 🎉 **Join my Discord Server:** Try the bot and chat with others. [Join here](https://dsc.gg/devhub-rsgh):
+- 🎉 **Join my Discord Server:** Chat with me and others. [Join here](https://dsc.gg/devhub-rsgh):
 
 [![DiscordWidget](https://discordapp.com/api/guilds/1137347499414278204/widget.png?style=banner2)](https://dsc.gg/devhub-rsgh)
 
@@ -44,17 +44,15 @@ Join my [Discord server](https://dsc.gg/devhub-rsgh) for live chat, support, or 
 - [x] Make the overall library easier to understand.
 - [x] Add a non-GPT model.
 - [x] Make a discord bot.
-- [x] Make a ChatUI.
 - [x] Add an image generation model.
+- [x] Add more models.
 
 ## Discord bot:
-
-- Add the [freeGPT Discord bot](https://dsc.gg/freegpt).
 - This bot has all the models in this repository available.
 - It's interactive, overall fast, and easy to use.
 - And lastly, it's [open-sourced](https://github.com/Ruu3f/freeGPT-discord-bot).
 
-## Example:
+## Examples:
 
 **Text Completion:**
 ```python
