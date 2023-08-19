@@ -10,7 +10,7 @@ try:
     import tls_client
 except ModuleNotFoundError:
     system("pip install tls_client --no-cache-dir")
-
+    import tls_client
 
 class Completion:
     """
