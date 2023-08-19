@@ -7,9 +7,10 @@ from uuid import uuid4
 from re import findall
 
 try:
-    import tls_client
+    from tls_client import Session
 except ModuleNotFoundError:
     system("pip install tls_client --no-cache-dir")
+    from tls_client import Session
 
 
 class Completion:
@@ -30,7 +31,7 @@ class Completion:
         Raises:
             Exception: If unable to fetch a valid response.
         """
-        client = tls_client.Session(client_identifier="chrome_108")
+        client = Session(client_identifier="chrome_108")
         client.headers = {
             "authority": "you.com",
             "accept": "text/event-stream",
