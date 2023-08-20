@@ -44,7 +44,6 @@ setup(
     ],
     packages=find_packages(exclude=[".github"]),
     install_requires=[
-        "requests",
         "aiohttp",
     ],
     project_urls={
