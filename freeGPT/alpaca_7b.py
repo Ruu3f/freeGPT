@@ -2,8 +2,7 @@
 freeGPT's alpaca_7b module
 """
 
-from requests import post
-from requests.exceptions import RequestException
+from aiohttp import ClientSession, ClientError
 
 
 class Completion:
@@ -13,40 +12,24 @@ class Completion:
 
     async def create(self, prompt):
         """
-        Generates a text completion for the given prompt using an API.
+        Create a completion using the provided prompt.
 
         Args:
-            prompt (str): The prompt for which to generate a text completion.
+            prompt (str): The text prompt for generating a completion.
 
         Returns:
-            str: The generated text completion.
+            str: The generated completion text.
 
         Raises:
-            Exception: If there is an error fetching the response from the API.
+            ClientError: If there is an issue with the HTTP request or response.
         """
-        try:
-            resp = post(
-                "https://us-central1-arched-keyword-306918.cloudfunctions.net/run-inference-1",
-                headers={
-                    "Origin": "https://chatllama.baseten.co",
-                    "Referer": "https://chatllama.baseten.co/",
-                    "Accept": "application/json, text/plain, */*",
-                    "Accept-Encoding": "gzip, deflate, br",
-                    "Accept-Language": "en-US,en;q=0.9",
-                    "Content-Length": "17",
-                    "Content-Type": "application/json",
-                    "Sec-Ch-Ua": '"Google Chrome";v="89", "Chromium";v="89", ";Not A Brand";v="99"',
-                    "Sec-Ch-Ua-Mobile": "?0",
-                    "Sec-Ch-Ua-Platform": "Windows",
-                    "Sec-Fetch-Dest": "empty",
-                    "Sec-Fetch-Mode": "cors",
-                    "Sec-Fetch-Site": "cross-site",
-                    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.79 Safari/537.36",
-                },
-                json={"prompt": prompt},
-                timeout=30,
-            ).json()
-        except RequestException:
-            raise Exception("Unable to fetch the response.")
-
-        return resp["completion"]
+        async with ClientSession() as session:
+            try:
+                async with session.post(
+                    "https://us-central1-arched-keyword-306918.cloudfunctions.net/run-inference-1",
+                    json={"prompt": prompt},
+                ) as resp:
+                    resp_json = await resp.json()
+            except ClientError as exc:
+                raise ClientError("Unable to fetch the response.") from exc
+        return resp_json["completion"]
