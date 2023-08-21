@@ -30,7 +30,7 @@ class Completion:
                     "https://ava-alpha-api.codelink.io/api/chat",
                     headers={"Content-Type": "application/json"},
                     json={
-                        "model": "gpt-4",
+                        "model": "gpt-3",
                         "temperature": 0.6,
                         "stream": True,
                         "messages": [
