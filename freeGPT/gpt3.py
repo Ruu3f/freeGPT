@@ -2,7 +2,6 @@
 freeGPT's gpt3 module
 """
 
-from json import loads, JSONDecodeError
 from aiohttp import ClientSession, ClientError
 
 
@@ -13,58 +12,26 @@ class Completion:
 
     async def create(self, prompt):
         """
-        Create a new completion based on the given prompt.
+        Generates completions based on prompts.
 
         Args:
-            prompt (str): The prompt to generate a completion for.
+            prompt (str): The prompt for generating completions.
 
         Returns:
             str: The generated completion.
-
         Raises:
-            Exception: If unable to fetch the response.
+            ClientError: If unable to fetch the response.
         """
-        try:
-            async with ClientSession() as session:
+        async with ClientSession() as session:
+            try:
                 async with session.post(
-                    "https://ava-alpha-api.codelink.io/api/chat",
-                    headers={"Content-Type": "application/json"},
+                    "https://www.chatbase.co/api/fe/chat",
                     json={
-                        "model": "gpt-3",
-                        "temperature": 0.6,
-                        "stream": True,
-                        "messages": [
-                            {
-                                "role": "system",
-                                "content": "You are Ava, an AI assistant.",
-                            },
-                            {"role": "user", "content": prompt},
-                        ],
+                        "chatId": "chatbase--1--pdf-p680fxvnm",
+                        "captchaCode": "hadsa",
+                        "messages": [{"role": "user", "content": prompt}],
                     },
-                    timeout=45,
-                ) as resp_obj:
-                    resp = ""
-                    async for line in resp_obj.content:
-                        line_text = line.decode("utf-8").strip()
-                        if line_text.startswith("data:"):
-                            data = line_text.split("data:")[1]
-                            try:
-                                data_json = loads(data)
-                                if "choices" in data_json:
-                                    choices = data_json["choices"]
-                                    for choice in choices:
-                                        if (
-                                            "finish_reason" in choice
-                                            and choice["finish_reason"] == "stop"
-                                        ):
-                                            break
-                                        if (
-                                            "delta" in choice
-                                            and "content" in choice["delta"]
-                                        ):
-                                            resp += choice["delta"]["content"]
-                            except JSONDecodeError:
-                                pass
-                    return resp
-        except ClientError as exc:
-            raise ClientError("Unable to fetch the response.") from exc
+                ) as resp:
+                    return await resp.text()
+            except ClientError as exc:
+                raise ClientError("Unable to fetch the response.") from exc
