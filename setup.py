@@ -4,7 +4,7 @@ with open("README.md", encoding="utf-8") as f:
     README = f.read()
 setup(
     name="freeGPT",
-    version="1.2.8",
+    version="1.2.9",
     description="freeGPT provides free access to text and image generation models.",
     long_description=README,
     long_description_content_type="text/markdown",
@@ -45,6 +45,7 @@ setup(
     packages=find_packages(exclude=[".github"]),
     install_requires=[
         "aiohttp",
+        "curl-cffi",
     ],
     project_urls={
         "Source": "https://github.com/Ruu3f/freeGPT",
