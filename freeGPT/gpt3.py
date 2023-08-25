@@ -2,6 +2,7 @@
 freeGPT's gpt3 module
 """
 
+
 from aiohttp import ClientSession, ClientError
 
 
@@ -12,24 +13,32 @@ class Completion:
 
     async def create(self, prompt):
         """
-        Generates completions based on prompts.
+        Create a completion for the given prompt using an AI text generation API.
 
         Args:
-            prompt (str): The prompt for generating completions.
+            prompt (str): The prompt for which completion needs to be generated.
 
         Returns:
-            str: The generated completion.
+            str: The generated completion text.
+
         Raises:
-            ClientError: If unable to fetch the response.
+            ClientError: If there's an issue with the API request or response.
         """
         async with ClientSession() as session:
             try:
                 async with session.post(
-                    "https://www.chatbase.co/api/fe/chat",
+                    url="https://api.aichatos.cloud/api/generateStream",
+                    headers={
+                        "accept": "application/json, text/plain, */*",
+                        "content-type": "application/json",
+                        "origin": "https://chat9.yqcloud.top",
+                    },
                     json={
-                        "chatId": "chatbase--1--pdf-p680fxvnm",
-                        "captchaCode": "hadsa",
-                        "messages": [{"role": "user", "content": prompt}],
+                        "prompt": f"Always respond in English. Prompt: {prompt}",
+                        "network": True,
+                        "system": "",
+                        "withoutContext": False,
+                        "stream": False,
                     },
                 ) as resp:
                     return await resp.text()
