@@ -34,14 +34,6 @@ class Completion:
         async with ClientSession() as session:
             headers = {
                 "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.79 Safari/537.36",
-                "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
-                "Accept-Language": "ru-RU,ru;q=0.8,en-US;q=0.5,en;q=0.3",
-                "Content-Type": "application/x-www-form-urlencoded",
-                "Upgrade-Insecure-Requests": "1",
-                "Sec-Fetch-Dest": "document",
-                "Sec-Fetch-Mode": "navigate",
-                "Sec-Fetch-Site": "same-origin",
-                "Sec-Fetch-User": "?1",
                 "Referer": "https://gpt-gm.h2o.ai/r/jGfKSwU",
             }
             try:
@@ -60,23 +52,14 @@ class Completion:
                     headers=headers,
                     json={"model": "h2oai/h2ogpt-gm-oasst1-en-2048-falcon-40b-v1"},
                 ) as conversation_resp:
-                    headers = {
-                        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/115.0",
-                        "Accept": "*/*",
-                        "Accept-Language": "ru-RU,ru;q=0.8,en-US;q=0.5,en;q=0.3",
-                        "Content-Type": "application/json",
-                        "Sec-Fetch-Dest": "empty",
-                        "Sec-Fetch-Mode": "cors",
-                        "Sec-Fetch-Site": "same-origin",
-                        "Referer": "https://gpt-gm.h2o.ai/",
-                    }
-
                     conversation_id_data = await conversation_resp.json()
                     conversation_id = conversation_id_data["conversationId"]
 
                     async with session.post(
                         f"https://gpt-gm.h2o.ai/conversation/{conversation_id}",
-                        headers=headers,
+                        headers={
+                            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/115.0",
+                        },
                         json={
                             "inputs": conversation,
                             "parameters": {
