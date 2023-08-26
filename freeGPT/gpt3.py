@@ -28,11 +28,7 @@ class Completion:
             try:
                 async with session.post(
                     url="https://api.aichatos.cloud/api/generateStream",
-                    headers={
-                        "accept": "application/json, text/plain, */*",
-                        "content-type": "application/json",
-                        "origin": "https://chat9.yqcloud.top",
-                    },
+                    headers={"origin": "https://chat9.yqcloud.top"},
                     json={
                         "prompt": f"Always respond in English. Prompt: {prompt}",
                         "network": True,
