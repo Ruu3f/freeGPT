@@ -26,13 +26,9 @@ class Completion:
             Exception: If the response does not contain the expected "youChatToken".
         """
         headers = {
-            "authority": "you.com",
-            "accept": "text/event-stream",
-            "accept-language": "en,fr-FR;q=0.9,fr;q=0.8,es-ES;q=0.7,es;q=0.6,en-US;q=0.5,am;q=0.4,de;q=0.3",
             "cache-control": "no-cache",
-            "referer": "https://you.com/search?q=who+are+you&tbm=youchat",
+            "referer": "https://you.com/search?q=gpt4&tbm=youchat",
             "cookie": f"safesearch_guest=Off; uuid_guest={str(uuid4())}",
-            "user-agent": "Mozilla/5.0 (Windows NT 5.1; U;  ; rv:1.8.1) Gecko/20061208 Firefox/2.0.0 Opera 9.52",
         }
         params = {
             "q": prompt,
