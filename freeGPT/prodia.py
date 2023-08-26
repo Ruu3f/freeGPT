@@ -33,19 +33,6 @@ class Generation:
             "aspect_ratio": "square",
         }
         headers = {
-            "authority": "api.prodia.com",
-            "accept": "*/*",
-            "accept-language": "en-US,en;q=0.6",
-            "dnt": "1",
-            "origin": "https://app.prodia.com",
-            "referer": "https://app.prodia.com/",
-            "sec-ch-ua": '"Brave";v="113", "Chromium";v="113", "Not-A.Brand";v="24"',
-            "sec-ch-ua-mobile": "?0",
-            "sec-ch-ua-platform": '"Linux"',
-            "sec-fetch-dest": "empty",
-            "sec-fetch-mode": "cors",
-            "sec-fetch-site": "same-site",
-            "sec-gpc": "1",
             "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.79 Safari/537.36",
         }
         try:
