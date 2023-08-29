@@ -50,7 +50,7 @@ Join my [Discord server](https://dsc.gg/devhub-rsgh) for live chat, support, or 
 ## Discord bot:
 - This bot has all the models in this repository available.
 - It's interactive, overall fast, and easy to use.
-- And lastly, it's [open-sourced](https://github.com/Ruu3f/freeGPT-discord-bot).
+- And lastly, it's [open-sourced](https://github.com/Ruu3f/freeGPT-discord).
 
 ## Examples:
 
