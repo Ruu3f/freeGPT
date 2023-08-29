@@ -42,7 +42,7 @@ class Completion:
                     headers=headers,
                     data={
                         "ethicsModalAccepted": "true",
-                        "shareConversationsWithModelAuthors": "true",
+                        "shareConversationsWithModelAuthors": "false",
                         "ethicsModalAcceptedAt": "",
                         "activeModel": "h2oai/h2ogpt-gm-oasst1-en-2048-falcon-40b-v1",
                         "searchEnabled": "true",
