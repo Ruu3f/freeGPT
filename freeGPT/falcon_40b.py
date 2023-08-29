@@ -34,7 +34,7 @@ class Completion:
         async with ClientSession() as session:
             headers = {
                 "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.79 Safari/537.36",
-                "Referer": "https://gpt-gm.h2o.ai/r/jGfKSwU",
+                "Referer": "https://gpt-gm.h2o.ai/",
             }
             try:
                 async with session.post(
