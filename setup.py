@@ -12,7 +12,6 @@ setup(
     author="Ruu3f",
     license="GPLv3",
     keywords=[
-        "natural-language-processing",
         "artificial-intelligence",
         "machine-learning",
         "deep-learning",
