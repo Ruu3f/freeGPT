@@ -22,14 +22,6 @@ class Completion:
         Returns:
             str: The generated text.
         """
-        conversation = ""
-        messages = [
-            {"role": "system", "content": "You are Falcon, an AI assistant."},
-            {"role": "user", "content": prompt},
-        ]
-
-        for message in messages:
-            conversation += f'{message["role"]}: {message["content"]}\n'
 
         async with ClientSession() as session:
             headers = {
@@ -51,17 +43,17 @@ class Completion:
                     "https://gpt-gm.h2o.ai/conversation",
                     headers=headers,
                     json={"model": "h2oai/h2ogpt-gm-oasst1-en-2048-falcon-40b-v1"},
-                ) as conversation_resp:
-                    conversation_id_data = await conversation_resp.json()
-                    conversation_id = conversation_id_data["conversationId"]
+                ) as resp:
+                    resp_json = await resp.json()
+                    resp_json = resp_json["conversationId"]
 
                     async with session.post(
-                        f"https://gpt-gm.h2o.ai/conversation/{conversation_id}",
+                        f"https://gpt-gm.h2o.ai/conversation/{resp_json}",
                         headers={
                             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/115.0",
                         },
                         json={
-                            "inputs": conversation,
+                            "inputs": prompt,
                             "parameters": {
                                 "temperature": 0.6,
                                 "truncate": 2048,
@@ -78,11 +70,10 @@ class Completion:
                                 "web_search_id": "",
                             },
                         },
-                    ) as generation_resp:
-                        generated_text = await generation_resp.text()
-                        resp_data = loads(
-                            generated_text.replace("\n", "").split("data:")[-1]
-                        )
-                        return resp_data["generated_text"]
+                    ) as resp:
+                        resp_text = await resp.text()
+                        return loads(resp_text.replace("\n", "").split("data:")[-1])[
+                            "generated_text"
+                        ]
             except ClientError as exc:
                 raise ClientError("Unable to fetch response.") from exc
