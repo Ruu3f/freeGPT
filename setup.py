@@ -43,7 +43,8 @@ setup(
     ],
     install_requires=[
         "aiohttp",
-        "requests" "curl-cffi",
+        "requests",
+        "curl-cffi",
     ],
     project_urls={
         "Source": "https://github.com/Ruu3f/freeGPT",
