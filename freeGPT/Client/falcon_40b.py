@@ -72,6 +72,7 @@ class Completion:
                         },
                     },
                 )
+                resp.encoding = "utf-8"
                 return loads(resp.text.replace("\n", "").split("data:")[-1])[
                     "generated_text"
                 ]

@@ -38,6 +38,7 @@ class Completion:
                         "stream": False,
                     },
                 ) as resp:
+                    resp.encoding = "utf-8"
                     return await resp.text()
             except ClientError as exc:
                 raise ClientError("Unable to fetch the response.") from exc

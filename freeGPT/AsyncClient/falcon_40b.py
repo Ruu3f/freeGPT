@@ -71,6 +71,7 @@ class Completion:
                             },
                         },
                     ) as resp:
+                        resp.encoding = "utf-8"
                         resp_text = await resp.text()
                         return loads(resp_text.replace("\n", "").split("data:")[-1])[
                             "generated_text"

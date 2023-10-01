@@ -38,6 +38,7 @@ class Completion:
                     "stream": False,
                 },
             )
+            resp.encoding = "utf-8"
             return resp.text
         except RequestException as exc:
             raise RequestException("Unable to fetch the response.") from exc
