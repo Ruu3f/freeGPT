@@ -49,7 +49,12 @@ class Completion:
         if "youChatToken" not in resp.text:
             raise RequestsError("Unable to fetch response.")
         return (
-            "".join(findall(r"{\"youChatToken\": \"(.*?)\"}", resp.text))
+            "".join(
+                findall(
+                    r"{\"youChatToken\": \"(.*?)\"}",
+                    resp.content.decode("unicode-escape"),
+                )
+            )
             .replace("\\n", "\n")
             .replace("\\\\", "\\")
             .replace('\\"', '"')

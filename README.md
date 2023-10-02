@@ -1,3 +1,5 @@
+<img src="https://repository-images.githubusercontent.com/636250478/f62a1186-b84b-4e7a-86f1-145e32163a59" align="right" width=170>
+
 [![PyPI](https://img.shields.io/pypi/v/freeGPT)](https://pypi.org/project/freeGPT)
 [![Downloads](https://static.pepy.tech/badge/freeGPT)](https://pypi.org/project/freeGPT)
 [![Status](https://img.shields.io/pypi/status/freeGPT)](https://pypi.org/project/freeGPT)
@@ -8,9 +10,7 @@ freeGPT provides free access to text and image generation models.
 
 ## Getting Started:
 
-```
-python -m pip install -U freeGPT
-```
+    python -m pip install -U freeGPT
 
 Join my [Discord server](https://dsc.gg/devhub-rsgh) for live chat, support, or if you have any issues with this package.
 
@@ -27,16 +27,16 @@ Join my [Discord server](https://dsc.gg/devhub-rsgh) for live chat, support, or 
 
 ## Support this repository:
 
-- ⭐ **Star the project:** Star this and the [freeGPT-discord repository](https://github.com/Ruu3f/freeGPT-discord). It means a lot to me! 💕
-- 🎉 **Join my Discord Server:** Chat with me and others. [Join here](https://dsc.gg/devhub-rsgh):
+-   ⭐ **Star the project:** Star this and the [freeGPT-discord repository](https://github.com/Ruu3f/freeGPT-discord). It means a lot to me! 💕
+-   🎉 **Join my Discord Server:** Chat with me and others. [Join here](https://dsc.gg/devhub-rsgh):
 
 [![DiscordWidget](https://discordapp.com/api/guilds/1137347499414278204/widget.png?style=banner2)](https://dsc.gg/devhub-rsgh)
 
 ## Discord bot:
 
-- This bot has all the models in this repository available.
-- It's interactive, overall fast, and easy to use.
-- And lastly, it's [open-sourced](https://github.com/Ruu3f/freeGPT-discord).
+-   This bot has all the models in this repository available.
+-   It's interactive, overall fast, and easy to use.
+-   And lastly, it's [open-sourced](https://github.com/Ruu3f/freeGPT-discord).
 
 ## Examples:
 

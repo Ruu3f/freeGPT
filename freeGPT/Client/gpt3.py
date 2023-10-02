@@ -24,20 +24,20 @@ class Completion:
         Raises:
             requests.exceptions.RequestException: If there is an issue with sending the request or fetching the response.
         """
-
         try:
             resp = post(
-                "https://api.binjie.fun/api/generateStream",
+                url="https://api.binjie.fun/api/generateStream",
                 headers={
                     "origin": "https://chat.jinshutuan.com",
                     "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.79 Safari/537.36",
                 },
                 json={
-                    "prompt": f"Always talk in English. Prompt: {prompt}",
+                    "prompt": prompt,
                     "withoutContext": True,
                     "stream": False,
                 },
             )
+            resp.encoding = "utf-8"
             return resp.text
         except RequestException as exc:
             raise RequestException("Unable to fetch the response.") from exc
