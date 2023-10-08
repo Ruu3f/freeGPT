@@ -76,4 +76,4 @@ class Completion:
                             "generated_text"
                         ]
             except ClientError as exc:
-                raise ClientError("Unable to fetch response.") from exc
+                raise ClientError("Unable to fetch the response.") from exc

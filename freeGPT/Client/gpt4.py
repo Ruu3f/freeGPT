@@ -47,7 +47,7 @@ class Completion:
             impersonate="chrome107",
         )
         if "youChatToken" not in resp.text:
-            raise RequestsError("Unable to fetch response.")
+            raise RequestsError("Unable to fetch the response.")
         return (
             "".join(
                 findall(

@@ -76,4 +76,4 @@ class Completion:
                     "generated_text"
                 ]
             except RequestException as exc:
-                raise RequestException("Unable to fetch response.") from exc
+                raise RequestException("Unable to fetch the response.") from exc
