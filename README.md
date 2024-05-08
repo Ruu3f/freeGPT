@@ -12,8 +12,6 @@ freeGPT provides free access to text and image generation models.
 
     python -m pip install -U freeGPT
 
-Join my [Discord server](https://dsc.gg/devhub-rsgh) for live chat, support, or if you have any issues with this package.
-
 ## Sources:
 
 | Model        | Website                                               |
@@ -27,16 +25,13 @@ Join my [Discord server](https://dsc.gg/devhub-rsgh) for live chat, support, or 
 
 ## Support this repository:
 
--   ⭐ **Star the project:** Star this and the [freeGPT-discord repository](https://github.com/Ruu3f/freeGPT-discord). It means a lot to me! 💕
--   🎉 **Join my Discord Server:** Chat with me and others. [Join here](https://dsc.gg/devhub-rsgh):
-
-[![DiscordWidget](https://discordapp.com/api/guilds/1137347499414278204/widget.png?style=banner2)](https://dsc.gg/devhub-rsgh)
+- ⭐ **Star the project:** Star this and the [freeGPT-discord repository](https://github.com/Ruu3f/freeGPT-discord). It means a lot to me! 💕
 
 ## Discord bot:
 
--   This bot has all the models in this repository available.
--   It's interactive, overall fast, and easy to use.
--   And lastly, it's [open-sourced](https://github.com/Ruu3f/freeGPT-discord).
+- This bot has all the models in this repository available.
+- It's interactive, overall fast, and easy to use.
+- And lastly, it's [open-sourced](https://github.com/Ruu3f/freeGPT-discord).
 
 ## Examples:
 
