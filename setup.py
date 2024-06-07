@@ -4,7 +4,7 @@ with open("README.md", encoding="utf-8") as f:
     README = f.read()
 setup(
     name="freeGPT",
-    version="1.3.4",
+    version="1.3.5",
     description="freeGPT provides free access to text and image generation models.",
     long_description=README,
     long_description_content_type="text/markdown",
@@ -42,7 +42,6 @@ setup(
         "Programming Language :: Python :: Implementation :: PyPy",
     ],
     install_requires=[
-        "aiohttp",
         "requests",
         "curl-cffi",
     ],
